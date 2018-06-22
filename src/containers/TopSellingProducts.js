@@ -7,7 +7,9 @@ import ProductList from '../components/ProductList';
 
 class TopSellingProducts extends React.PureComponent {
     componentDidMount(): void {
-        this.props.getProducts();
+        if(!this.props.isRequestedBefore) {
+            this.props.getProducts();
+        }
     }
 
     render() {
@@ -25,6 +27,7 @@ const mapStateToProps = state => {
     return {
         isLoading: state.topSellingProducts.isLoading,
         products: state.topSellingProducts.list,
+        isRequestedBefore: state.topSellingProducts.isRequestedBefore,
     }
 };
 

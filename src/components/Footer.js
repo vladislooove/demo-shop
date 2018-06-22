@@ -6,14 +6,12 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__container">
-                <div className="footer__logo">
-                    <Link to="/">
-                        <img 
-                            src={logo} 
-                            className="footer__logo-img"
-                            alt="Logo" />
-                    </Link>
-                </div>
+                <Link to="/" className="footer__logo">
+                    <img 
+                        src={logo} 
+                        className="footer__logo-img"
+                        alt="Logo" />
+                </Link>
                 <small className="footer__copyright">
                     © DemoShop, 2018
                 </small>
