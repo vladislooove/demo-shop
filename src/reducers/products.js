@@ -9,7 +9,6 @@ const products = (state = { isLoading: false, list: [], page: 1, isRequestedBefo
             };
         
         case 'PRODUCT_LIST_FETCHED_SUCCESSFULLY':
-            console.log(state.page + 1);
             return {
                 isLoading: false,
                 list: [

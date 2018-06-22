@@ -1,5 +1,8 @@
+@import '../utils/helpers.scss';
+
 .product-list {
     position: relative;
+    margin-bottom: 20px;
     
     &__title {
         margin-bottom: 30px;
@@ -12,5 +15,14 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 -10px;
+    }
+
+    &__footer {
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    &__load-more {
+        @extend %button-primary;
     }
 }

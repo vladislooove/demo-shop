@@ -13,7 +13,7 @@ const ProductList = (props) => {
 
             <div className="product-list__content">
 
-                {products.length > 0 && !isLoading && 
+                {products.length > 0 && 
                     products.map((product) => {
                         const { id, name, image_link, short_description, price, expires } = product;
 
@@ -37,7 +37,7 @@ const ProductList = (props) => {
             </div>
             {isLoading && <Loader />}
 
-            {loadMore && hasMoreItems &&
+            {loadMore && hasMoreItems && !isLoading &&
                 <div className="product-list__footer">
                     <button className="product-list__load-more"
                             onClick={loadMore}>
