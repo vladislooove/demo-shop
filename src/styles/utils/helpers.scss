@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+%container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+%list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%non-decorated {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+%transition {
+    transition-timing-function: ease;
+    transition-duration: $time-md;
+}
+
+%img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

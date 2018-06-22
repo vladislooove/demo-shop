@@ -1,0 +1,27 @@
+@import '../utils/variables.scss';
+@import '../utils/helpers.scss';
+
+.footer {
+    background-color: $color-secondary;
+
+    &__container {
+        @extend %container;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    &__logo {
+        width: 70px;   
+    }
+
+    &__logo-img {
+        @extend %img-responsive;
+    }
+
+    &__copyright {
+        color: #fff;
+    }
+}

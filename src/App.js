@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import combinedStore from './reducers/';
+import rootSaga from './sagas';
+
+import './styles/index.css';
+
+import Home from './screens/Home';
+
+const sagaMiddleware: any = createSagaMiddleware();
+const store: Store = createStore(combinedStore, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                    </Switch>
+                </BrowserRouter>
+            </Provider>
+        );
+    }
 }
 
 export default App;

@@ -1,0 +1,12 @@
+// third-party import sections
+@import '../../node_modules/normalize.css/normalize.css';
+
+// helpers, variables and some base things
+@import './utils/variables.scss';
+@import './utils/helpers.scss';
+@import './utils/base.scss';
+
+// blocks
+@import './blocks/header.scss';
+@import './blocks/main.scss';
+@import './blocks/footer.scss';

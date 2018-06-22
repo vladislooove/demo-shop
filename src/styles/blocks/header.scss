@@ -1,0 +1,41 @@
+@import '../utils/variables.scss';
+@import '../utils/helpers.scss';
+
+.header {
+    background-color: $color-primary;
+    padding: 20px 0;
+
+    &__container {
+        @extend %container;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__logo {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 120px;
+    }
+
+    &__logo-img {
+        @extend %img-responsive;
+    }
+
+    &__nav {
+        @extend %list-unstyled;
+    }
+
+    &__nav-link {
+        @extend %transition, %non-decorated;
+
+        display: block;
+        padding: 15px;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
