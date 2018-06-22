@@ -2,15 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProductCard from './ProductCard';
+import Loader from './Loader';
 
 const ProductList = (props) => {
     const { isLoading, products, topSelling, title } = props;
 
     return (
-        <section className="products-list">
+        <section className="products-list">            
             <h2 className="product-list__title">{title}</h2>
+
+            {isLoading && <Loader />}
+
             <div className="product-list__content">
-                {products.length ? 
+
+                {products.length > 0 && !isLoading && 
                     products.map((product) => {
                         const { id, name, image_link, short_description, price } = product;
 
@@ -25,8 +30,10 @@ const ProductList = (props) => {
                             />    
                         );
                     })
-                    :
-                    <p>There are no products...</p>
+                }
+
+                {!products.length > 0 && !isLoading &&
+                    <p>There are no items yet...</p>
                 }
             </div>
         </section>
