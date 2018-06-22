@@ -21,11 +21,13 @@ class Product extends React.PureComponent {
         return (
             <div className="product">
 
-                {isLoading && <Loader />}
+                {!isLoading && <Loader />}
 
-                <picture className="product__media">
-                    <img src={img} alt={name} />
-                </picture>
+                <div className="product__media-wrapper">
+                    <picture className="product__media">
+                        <img src={img} alt={name} className="product__img" />
+                    </picture>
+                </div>
                 <div className="product__info">
                     <h1 className="product__title">
                         {name}
