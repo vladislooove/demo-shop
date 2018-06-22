@@ -36,6 +36,7 @@
     }
 
     &__short-description {
+        margin-bottom: 10px;
         font-size: 14px;
     }
 
@@ -48,5 +49,11 @@
         color: #fff;
         text-transform: uppercase;
         font-weight: 700;
+    }
+
+    &__tip {
+        margin-top: auto;
+        font-size: 12px;
+        color: $color-error;
     }
 }
