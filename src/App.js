@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 
 import combinedStore from './reducers/';
 import rootSaga from './sagas';
@@ -20,11 +21,13 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                    </Switch>
-                </BrowserRouter>
+                <IntlProvider locale={window.navigator.language}>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                        </Switch>
+                    </BrowserRouter>
+                </IntlProvider>
             </Provider>
         );
     }

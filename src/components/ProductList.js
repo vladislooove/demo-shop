@@ -17,7 +17,7 @@ const ProductList = (props) => {
 
                 {products.length > 0 && !isLoading && 
                     products.map((product) => {
-                        const { id, name, image_link, short_description, price } = product;
+                        const { id, name, image_link, short_description, price, expires } = product;
 
                         return (
                             <ProductCard
@@ -27,6 +27,7 @@ const ProductList = (props) => {
                                 shortDescription={short_description}
                                 price={price}
                                 topSelling={topSelling}
+                                expirationDate={expires}
                             />    
                         );
                     })
