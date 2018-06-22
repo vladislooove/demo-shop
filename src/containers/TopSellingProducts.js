@@ -15,7 +15,7 @@ class TopSellingProducts extends React.PureComponent {
             <ProductList
                     isLoading={this.props.isLoading}
                     products={this.props.products}
-                    topSelling={true}
+                    topSelling
                     title="Top selling products" />
         );
     }

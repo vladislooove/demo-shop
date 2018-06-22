@@ -22,7 +22,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <IntlProvider locale={window.navigator.language}>
+                <IntlProvider locale="en">
                     <BrowserRouter>
                         <Switch>
                             <Route exact path="/" component={Home} />
