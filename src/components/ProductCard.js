@@ -12,8 +12,10 @@ const ProductCard = (props) => {
                      src={img} />
             </picture>
             <h2 className="product-card__title">{name}</h2>
-            <span className="product-card__price">{price}</span>
-            <div className="product-card__short-description">{shortDescription}</div>
+            <span className="product-card__price">{price} $</span>
+            <div className="product-card__short-description">
+                {shortDescription.length > 100 ? `${shortDescription.substring(0, 100)}...` : shortDescription}
+            </div>
 
             {topSelling && <div className="product-card__label">Top</div>}
         </article>

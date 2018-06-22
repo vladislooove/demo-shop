@@ -1,0 +1,14 @@
+.product-list {
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+}
