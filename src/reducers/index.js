@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-const combinedStore = combineReducers({
+import topSellingProducts from './topSellingProducts';
 
+const combinedStore = combineReducers({
+    topSellingProducts,
 });
 
 export default combinedStore;
