@@ -9,5 +9,9 @@ export default {
 
     getProducts(page: number): Promise {
         return axios.get(`${apiBaseUrl}/products/${page}.json`);
-    }
+    },
+
+    getProduct(id: number): Promise {
+        return axios.get(`${apiBaseUrl}/product/${id}.json`);
+    },
 }

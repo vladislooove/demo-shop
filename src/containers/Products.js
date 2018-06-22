@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
- 
+import PropTypes from 'prop-types'; 
+
 import { getProducts } from '../actions';
 
 import ProductList from '../components/ProductList';
@@ -46,5 +47,13 @@ const mapDispatchToProps = dispatch => {
         }
     };
 };
+
+Products.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
+    products: PropTypes.array.isRequired,
+    page: PropTypes.number.isRequired,
+    isRequestedBefore: PropTypes.bool.isRequired,
+    getProducts: PropTypes.func.isRequired,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

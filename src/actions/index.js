@@ -12,3 +12,12 @@ export const getProducts = (page: number) => {
         },
     };
 };
+
+export const getProduct = (id: number) => {
+    return {
+        type: 'PRODUCT_REQUESTED',
+        payload: {
+            id,
+        },
+    };
+};

@@ -1,4 +1,4 @@
-const topSellingProducts = (state = { isLoading: false, list: []}, action) => {
+const topSellingProducts = (state = { isLoading: false, list: [], isRequestedBefore: false}, action) => {
     switch (action.type) {
         case 'TOP_SELLING_PRODUCTS_REQUESTED':
             return {
