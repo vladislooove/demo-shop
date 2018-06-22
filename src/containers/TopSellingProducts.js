@@ -3,10 +3,20 @@ import { connect } from 'react-redux';
 
 import { getTopSellingProducts } from '../actions';
 
+import ProductList from '../components/ProductList';
+
 class TopSellingProducts extends React.PureComponent {
+    componentDidMount(): void {
+        this.props.getProducts();
+    }
+
     render() {
         return (
-            <p>topSelling</p>
+            <ProductList
+                    isLoading={this.props.isLoading}
+                    products={this.props.products}
+                    topSelling={true}
+                    title="Top selling products" />
         );
     }
 }
