@@ -11,6 +11,7 @@ import rootSaga from './sagas';
 import './styles/index.css';
 
 import Home from './screens/Home';
+import Products from './screens/Products';
 
 const sagaMiddleware: any = createSagaMiddleware();
 const store: Store = createStore(combinedStore, applyMiddleware(sagaMiddleware));
@@ -25,6 +26,7 @@ class App extends Component {
                     <BrowserRouter>
                         <Switch>
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/products" component={Products} />
                         </Switch>
                     </BrowserRouter>
                 </IntlProvider>

@@ -15,4 +15,8 @@ function* getTopSellingProductsSaga(action) {
     }
 }
 
+function* getProductsListSaga(action) {
+    
+}
+
 export default rootSaga;

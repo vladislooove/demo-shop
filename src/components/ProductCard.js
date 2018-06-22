@@ -16,6 +16,7 @@ const ProductCard = (props) => {
             <span className="product-card__price">
                 <FormattedNumber 
                     value={price} 
+                    // eslint-disable-next-line
                     style="currency"
                     currency="USD"
                     minimumFractionDigits={2} /> 

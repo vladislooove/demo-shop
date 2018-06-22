@@ -27,8 +27,12 @@
 
     &__nav {
         @extend %list-unstyled;
-    }
 
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+    }
+    
     &__nav-link {
         @extend %transition, %non-decorated;
 
@@ -37,5 +41,12 @@
         font-size: 22px;
         text-transform: uppercase;
         color: #fff;
+        transition-property: color;
+
+        &:hover,
+        &:focus,
+        &--active {
+            color: $color-secondary;
+        }
     }
 }
