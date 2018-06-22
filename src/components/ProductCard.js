@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedRelative, FormattedNumber } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
-    const { name, img, shortDescription, price, topSelling, expirationDate } = props;
+    const { id, name, img, shortDescription, price, topSelling, expirationDate } = props;
 
     return (
-        <article className="product-card">
+        <Link className="product-card" to={`/products/${id}`}>
             <picture className="product-card__media">
                 <img className="product-card__img" 
                      alt={name}
@@ -32,11 +33,12 @@ const ProductCard = (props) => {
             }
 
             {topSelling && <div className="product-card__label">Top</div>}
-        </article>
+        </Link>
     );
 };
 
 ProductCard.proptypes = {
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     shortDescription: PropTypes.string.isRequired,

@@ -20,6 +20,7 @@ const ProductList = (props) => {
                         return (
                             <ProductCard
                                 key={id}
+                                id={id}
                                 name={name}
                                 img={image_link}
                                 shortDescription={short_description}
