@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 
 import { getTopSellingProducts } from '../actions';
 
+import {
+    getTopSellingProductsLoadingState,
+    getTopSellingProductsState,
+    getTopSellingProductsRequestState,
+} from '../selectors';
+
 import ProductList from '../components/ProductList';
 
 class TopSellingProducts extends React.PureComponent {
@@ -26,9 +32,9 @@ class TopSellingProducts extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.topSellingProducts.isLoading,
-        products: state.topSellingProducts.list,
-        isRequestedBefore: state.topSellingProducts.isRequestedBefore,
+        isLoading: getTopSellingProductsLoadingState(state),
+        products: getTopSellingProductsState(state),
+        isRequestedBefore: getTopSellingProductsRequestState(state),
     }
 };
 

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { getProduct, cartProductAdd } from '../actions';
 
+import { getProductState, getProductLoadingState } from '../selectors';
+
 import Loader from '../components/Loader';
 import Price from '../components/Price';
 
@@ -59,8 +61,8 @@ class Product extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.product.isLoading,
-        product: state.product.product,
+        product: getProductState(state),
+        isLoading: getProductLoadingState(state),
     };
 };
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { cartProductRemove } from '../actions';
+import { getCartState } from '../selectors';
 
 import ProductCartItem from '../components/ProductCartItem';
 import Price from '../components/Price';
@@ -77,7 +78,7 @@ Cart.proptypes = {
 
 const mapStateToProps = state => {
     return {
-        products: state.cart.list,
+        products: getCartState(state),
     }
 };
 

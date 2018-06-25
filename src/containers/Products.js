@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 
 import { getProducts } from '../actions';
 
+import { 
+    getProductsState,
+    getProductsLoadingState,
+    getProductsPageState,
+    getProductsRequestState,
+} from '../selectors';
+
 import ProductList from '../components/ProductList';
 
 class Products extends React.PureComponent {
@@ -33,10 +40,10 @@ class Products extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.products.isLoading,
-        products: state.products.list,
-        page: state.products.page,
-        isRequestedBefore: state.products.isRequestedBefore,
+        isLoading: getProductsLoadingState(state),
+        products: getProductsState(state),
+        page: getProductsPageState(state),
+        isRequestedBefore: getProductsRequestState(state),
     }
 };
 

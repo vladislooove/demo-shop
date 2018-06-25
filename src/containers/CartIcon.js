@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { getCartIconState } from '../selectors';
+
 import cartIcon from '../assets/cart.svg';
 
 class CartIcon extends React.PureComponent {
@@ -25,7 +27,7 @@ class CartIcon extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
-        products: state.cart.list,
+        products: getCartIconState(state),
     }
 };
 
