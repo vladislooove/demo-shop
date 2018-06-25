@@ -24,6 +24,7 @@ const product = (state = {
                     img: action.payload.image_link,
                     name: action.payload.name,
                     price: action.payload.price,
+                    shortDescription: action.payload.short_description,
                 },
             };
 

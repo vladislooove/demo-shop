@@ -21,3 +21,18 @@ export const getProduct = (id: number) => {
         },
     };
 };
+
+export const cartProductAdd = (product: any) => {
+    return {
+        type: 'PRODUCT_ADDED_TO_CART',
+        payload: product,
+    };
+};
+
+export const cartProductRemove = (id: number) => {
+    return {
+        type: 'PRODUCT_REMOVED_FROM_CART',
+        payload: id,
+    };
+};
+

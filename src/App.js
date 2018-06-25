@@ -13,6 +13,7 @@ import './styles/index.css';
 import Home from './screens/Home';
 import Products from './screens/Products';
 import Product from './screens/Product';
+import Cart from './screens/Cart';
 
 const sagaMiddleware: any = createSagaMiddleware();
 const store: Store = createStore(combinedStore, applyMiddleware(sagaMiddleware));
@@ -29,6 +30,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/products" component={Products} />
                             <Route path="/products/:id" component={Product} />
+                            <Route path="/cart" component={Cart} />
                         </Switch>
                     </BrowserRouter>
                 </IntlProvider>

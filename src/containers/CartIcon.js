@@ -1,23 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import cartIcon from '../assets/cart.svg';
 
 class CartIcon extends React.PureComponent {
     render() {
         return (
-            <div className="cart-icon">
+            <Link className="cart-icon" to="/cart">
                 <img className="cart-icon__icon"
                      src={cartIcon}
                      alt="cart">
                 </img>
-                { this.props.products.length > 1 &&
+                { this.props.products.length > 0 &&
                     <span className="cart-icon__badge">
                         {this.props.products.length}
                     </span>
                 }
-            </div>
+            </Link>
         );
     }
 }

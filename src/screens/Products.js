@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
 
 import Products from '../containers/Products';
 
-export default class ProductsScreen extends Component {
-    render() {
-        return (
-            <Layout>
-                <Products />
-            </Layout>
-        );
-    }
-}
+const ProductsScreen = () => {
+    return (
+        <Layout>
+            <Products />
+        </Layout>
+    );
+};
+
+export default ProductsScreen;

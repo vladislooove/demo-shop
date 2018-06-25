@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getProduct } from '../actions';
+import { getProduct, cartProductAdd } from '../actions';
 
 import Loader from '../components/Loader';
 import Price from '../components/Price';
@@ -13,6 +13,10 @@ class Product extends React.PureComponent {
         if (this.props.id !== this.props.product.id) {
             this.props.getProduct(this.props.id);
         }
+    }
+
+    onBuyHandler(): void {
+        this.props.addProduct(this.props.product);
     }
 
     render() {
@@ -39,7 +43,11 @@ class Product extends React.PureComponent {
                     <div className="product__price">
                         <Price price={price} />
                     </div>
-                    <div className="product__buy-section">buy</div>
+                    <div className="product__buy-section">
+                        <button className="product__buy-btn" onClick={this.onBuyHandler.bind(this)}>
+                            Buy
+                        </button>
+                    </div>
                     <div className="product__description">
                         {description}
                     </div>
@@ -60,6 +68,9 @@ const mapDispatchToProps = dispatch => {
     return {
         getProduct: (id: number) => {
             dispatch(getProduct(id));
+        },
+        addProduct: (product: any) => {
+            dispatch(cartProductAdd(product));
         }
     };
 };
@@ -69,6 +80,7 @@ Product.propTypes = {
     isLoading: PropTypes.bool.isRequired,
     product: PropTypes.object.isRequired,
     getProduct: PropTypes.func.isRequired,
+    addProduct: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

@@ -1,3 +1,5 @@
+@import '../utils/helpers.scss';
+
 .product {
     display: flex;
     margin: 0 -10px;
@@ -35,6 +37,10 @@
 
     &__buy-section {
         margin-bottom: 30px;
+    }
+
+    &__buy-btn {
+        @extend %button-primary;
     }
 
     &__description {
