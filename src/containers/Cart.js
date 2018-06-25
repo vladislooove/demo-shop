@@ -9,8 +9,8 @@ import ProductCartItem from '../components/ProductCartItem';
 import Price from '../components/Price';
 
 class Cart extends React.PureComponent {
-    getSummaryPrice(): number {
-        let sum: number = 0;
+    getSummaryPrice() {
+        let sum = 0;
 
         this.props.products.forEach((product) => {
             sum += product.price;
@@ -84,7 +84,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeProduct: (id: number, dateAdded: Date) => {
+        removeProduct: (id, dateAdded) => {
             dispatch(cartProductRemove(id, dateAdded))
         },
     };

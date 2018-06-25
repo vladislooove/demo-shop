@@ -11,13 +11,13 @@ import Price from '../components/Price';
 
 class Product extends React.PureComponent {
     
-    componentDidMount(): void {
+    componentDidMount() {
         if (this.props.id !== this.props.product.id) {
             this.props.getProduct(this.props.id);
         }
     }
 
-    onBuyHandler(): void {
+    onBuyHandler() {
         this.props.addProduct(this.props.product);
     }
 
@@ -68,10 +68,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getProduct: (id: number) => {
+        getProduct: (id) => {
             dispatch(getProduct(id));
         },
-        addProduct: (product: any) => {
+        addProduct: (product) => {
             dispatch(cartProductAdd(product));
         }
     };

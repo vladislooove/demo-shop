@@ -15,14 +15,14 @@ import ProductList from '../components/ProductList';
 
 class Products extends React.PureComponent {
 
-    componentDidMount(): void {
+    componentDidMount() {
         if(!this.props.isRequestedBefore) {
             this.props.getProducts(1);
         }
     }
 
 
-    loadMoreHandler(): void {
+    loadMoreHandler() {
         this.props.getProducts(this.props.page);
     }
 
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getProducts: (page: number) => {
+        getProducts: (page) => {
             dispatch(getProducts(page))
         }
     };

@@ -13,7 +13,7 @@ import {
 import ProductList from '../components/ProductList';
 
 class TopSellingProducts extends React.PureComponent {
-    componentDidMount(): void {
+    componentDidMount() {
         if(!this.props.isRequestedBefore) {
             this.props.getProducts();
         }
