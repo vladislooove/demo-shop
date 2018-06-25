@@ -11,7 +11,6 @@ class CartPopup extends React.PureComponent {
         const isShown = this.props.isShown;
         const { name, img } = this.props.product;
     
-        console.log(isShown, name, img);    
         return (
             <div className={isShown ? 'cart-popup cart-popup--visible' : 'cart-popup'}>
                 <div className="cart-popup__label">

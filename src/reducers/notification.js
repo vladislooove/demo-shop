@@ -8,12 +8,18 @@ import {
 const notification = (state: NotificationStateType = { isShown: false, message: '', type: 'info' }, action: Object) => {
     switch (action.type) {
         case NOTIFICATION_SHOW:
-            console.log(action);
-            return state;
+            return {
+                isShown: true,
+                message: action.payload.message,
+                type: action.payload.type,
+            };
 
         case NOTIFICATION_HIDE:
-            console.log(action);
-            return state;
+            return {
+                isShown: false,
+                message: state.message,
+                type: state.type,
+            };
 
         default:
             return state;

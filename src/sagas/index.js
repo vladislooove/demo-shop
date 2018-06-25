@@ -14,8 +14,11 @@ import {
     PRODUCT_FETCHED_SUCCESSFULLY,
     PRODUCT_FETCH_FAILED,
     PRODUCT_ADDED_TO_CART,
+    PRODUCT_REMOVED_FROM_CART,
     CART_POPUP_SHOW,
     CART_POPUP_HIDE,
+    NOTIFICATION_SHOW,
+    NOTIFICATION_HIDE,
 } from '../constants';
 
 function* rootSaga() {
@@ -23,6 +26,8 @@ function* rootSaga() {
     yield takeEvery(PRODUCT_LIST_REQUESTED, getProductsListSaga);
     yield takeEvery(PRODUCT_REQUESTED, getProductSaga);
     yield takeEvery(PRODUCT_ADDED_TO_CART, addProductToCartSaga);
+    yield takeEvery(PRODUCT_REMOVED_FROM_CART, removeProductFromCartSaga);
+    yield takeEvery(NOTIFICATION_SHOW, notificationSaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -31,6 +36,10 @@ function* getTopSellingProductsSaga(action) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCHED_SUCCESSFULLY, payload: response.data.data });
     } catch (e) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCH_FAILED });
+        yield put({ type: NOTIFICATION_SHOW, payload: {
+            message: 'Oops, something went wrong...',
+            type: 'danger',
+        } });
     }
 }
 
@@ -40,6 +49,10 @@ function* getProductsListSaga(action) {
         yield put({ type: PRODUCT_LIST_FETCHED_SUCCESSFULLY, payload: response.data.data });
     } catch (e) {
         yield put({ type: PRODUCT_LIST_FETCH_FAILED });
+        yield put({ type: NOTIFICATION_SHOW, payload: {
+            message: 'Oops, something went wrong...',
+            type: 'danger',
+        } });
     }
 }
 
@@ -50,6 +63,10 @@ function* getProductSaga(action) {
         yield put({ type: PRODUCT_FETCHED_SUCCESSFULLY, payload: response.data });
     } catch (e) {
         yield put({ type: PRODUCT_FETCH_FAILED });
+        yield put({ type: NOTIFICATION_SHOW, payload: {
+            message: 'Oops, something went wrong...',
+            type: 'danger',
+        } });
     }
 }
 
@@ -58,9 +75,26 @@ function* addProductToCartSaga(action) {
         product: action.payload,
     } });
 
+    yield put({ type: NOTIFICATION_SHOW, payload: {
+        message: 'Product added to your cart',
+        type: 'success',
+    } });
+
     yield delay(3000);
 
     yield put({ type: CART_POPUP_HIDE });
 }
+
+function* removeProductFromCartSaga(action) {
+    yield put({ type: NOTIFICATION_SHOW, payload: {
+        message: 'Product removed from your cart',
+        type: 'success',
+    } });
+}
+
+function* notificationSaga(action) {
+    console.log(action);
+}
+
 
 export default rootSaga;
