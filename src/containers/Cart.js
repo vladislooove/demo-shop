@@ -47,7 +47,10 @@ class Cart extends React.PureComponent {
                     {this.props.products.length > 0 ? 
                         this.props.products.map((product, index) => {
                             return (
-                                <ProductCartItem key={index} {...product} />
+                                <ProductCartItem 
+                                    key={index}
+                                    onRemoveClick={this.props.removeProduct} 
+                                    {...product} />
                             );
                         })
                     :
@@ -75,8 +78,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeProduct: (id: number) => {
-            dispatch(cartProductRemove(id))
+        removeProduct: (id: number, dateAdded: Date) => {
+            dispatch(cartProductRemove(id, dateAdded))
         },
     };
 };

@@ -5,7 +5,7 @@ import { FormattedRelative } from 'react-intl';
 import Price from '../components/Price';
 
 const ProductCartItem = (props) => {
-    const { id, img, name, price, shortDescription, added } = props;
+    const { id, img, name, price, shortDescription, added, onRemoveClick } = props;
 
     return (
         <div className="product-cart-item">
@@ -27,7 +27,8 @@ const ProductCartItem = (props) => {
                 <FormattedRelative value={added} />
             </div>
             <div className="product-cart-item__remove">
-                <button className="product-cart-item__remove-btn">
+                <button className="product-cart-item__remove-btn"
+                    onClick={ () => {onRemoveClick(id, added)}}>
                     Remove
                 </button>
             </div>

@@ -1,7 +1,6 @@
 const card = (state = { isLoading: false, list: []}, action) => {
     switch (action.type) {
         case 'PRODUCT_ADDED_TO_CART':
-            console.log(action);
             return {
                 isLoading: false,
                 list: [
@@ -14,9 +13,13 @@ const card = (state = { isLoading: false, list: []}, action) => {
             };
 
         case 'PRODUCT_REMOVED_FROM_CART':
+            const newList = state.list.filter((product) => {
+                return !(product.id === action.payload.id && product.added === action.payload.dateAdded);
+            });
+        
             return {
                 isLoading: false,
-                list: state.list
+                list: newList,
             };
 
         default:

@@ -29,10 +29,13 @@ export const cartProductAdd = (product: any) => {
     };
 };
 
-export const cartProductRemove = (id: number) => {
+export const cartProductRemove = (id: number, dateAdded: Date) => {
     return {
         type: 'PRODUCT_REMOVED_FROM_CART',
-        payload: id,
+        payload: {
+            id,
+            dateAdded,
+        },
     };
 };
 
