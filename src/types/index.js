@@ -8,7 +8,7 @@ export type ProductType = {
     price: number | null,
 };
 
-export type ProductCardType = {
+export type ProductCartType = {
     added: string,
     description: string,
     id: number,
@@ -18,7 +18,7 @@ export type ProductCardType = {
     shortDescription: string,
 };
 
-export type CardStateType = {
+export type CartStateType = {
     isLoading: boolean,
     list: Array<ProductCardType>
 };
@@ -41,3 +41,7 @@ export type TopSellingProductsStateType = {
     isRequestedBefore: boolean,
 };
 
+export type CartPopupStateType = {
+    isShown: boolean,
+    lastAddedProduct: ProductType,
+};

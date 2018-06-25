@@ -1,4 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
 import Api from '../api';
 
@@ -12,12 +13,16 @@ import {
     PRODUCT_LIST_FETCH_FAILED,
     PRODUCT_FETCHED_SUCCESSFULLY,
     PRODUCT_FETCH_FAILED,
+    PRODUCT_ADDED_TO_CART,
+    CART_POPUP_SHOW,
+    CART_POPUP_HIDE,
 } from '../constants';
 
 function* rootSaga() {
     yield takeEvery(TOP_SELLING_PRODUCTS_REQUESTED, getTopSellingProductsSaga);
     yield takeEvery(PRODUCT_LIST_REQUESTED, getProductsListSaga);
     yield takeEvery(PRODUCT_REQUESTED, getProductSaga);
+    yield takeEvery(PRODUCT_ADDED_TO_CART, addProductToCartSaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -46,6 +51,16 @@ function* getProductSaga(action) {
     } catch (e) {
         yield put({ type: PRODUCT_FETCH_FAILED });
     }
+}
+
+function* addProductToCartSaga(action) {
+    yield put({ type: CART_POPUP_SHOW, payload: {
+        product: action.payload,
+    } });
+
+    yield delay(3000);
+
+    yield put({ type: CART_POPUP_HIDE });
 }
 
 export default rootSaga;

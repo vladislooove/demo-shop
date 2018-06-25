@@ -6,11 +6,11 @@ import {
 } from '../constants';
 
 import type {
-    CardStateType,
-    ProductCardType,
+    CartStateType,
+    ProductCartType,
 } from '../types';
 
-const cart = (state: CardStateType = { isLoading: false, list: []}, action: Object) => {
+const cart = (state: CartStateType = { isLoading: false, list: []}, action: Object) => {
     switch (action.type) {
         case PRODUCT_ADDED_TO_CART:
             return {
@@ -25,7 +25,7 @@ const cart = (state: CardStateType = { isLoading: false, list: []}, action: Obje
             };
 
         case PRODUCT_REMOVED_FROM_CART:
-            const newList: Array<ProductCardType> = state.list.filter((product) => {
+            const newList: Array<ProductCartType> = state.list.filter((product) => {
                 return !(product.id === action.payload.id && product.added === action.payload.dateAdded);
             });
         
