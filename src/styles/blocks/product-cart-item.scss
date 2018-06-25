@@ -7,6 +7,9 @@
     margin-bottom: 5px;
 
     &__media {
+        @extend %non-decorated;
+
+        display: block;
         flex-basis: 20%;
         max-width: 20%;
         flex-shrink: 0;
@@ -27,6 +30,9 @@
     }
 
     &__title {
+        @extend %non-decorated;
+
+        display: block;
         margin-bottom: 10px;
         color: $color-primary-variant;
         font-size: 20px;

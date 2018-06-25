@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedRelative } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 import Price from '../components/Price';
 
@@ -9,13 +10,13 @@ const ProductCartItem = (props) => {
 
     return (
         <div className="product-cart-item">
-            <div className="product-cart-item__media">
+            <Link to={`/products/${id}`} className="product-cart-item__media">
                 <img src={img} className="product-cart-item__img" alt={name} />
-            </div>
+            </Link>
             <div className="product-cart-item__info">
-                <div className="product-cart-item__title">
+                <Link to={`/products/${id}`} className="product-cart-item__title">
                     {name}
-                </div>
+                </Link>
                 <div className="product-cart-item__description">
                     {shortDescription}
                 </div>
