@@ -1,9 +1,16 @@
+// @flow
+
 import {
     PRODUCT_REQUESTED,
     PRODUCT_FETCHED_SUCCESSFULLY,
+    PRODUCT_FETCH_FAILED,
 } from '../constants';
 
-const product = (state = { 
+import type {
+    ProductStateType,
+} from '../types';
+
+const product = (state: ProductStateType = { 
     isLoading: false, 
     product: {
         id: null,
@@ -12,7 +19,7 @@ const product = (state = {
         description: null,
         price: null,
     }
-}, action) => {
+}, action: Object) => {
     switch (action.type) {
         case PRODUCT_REQUESTED:
             return {
@@ -33,7 +40,7 @@ const product = (state = {
                 },
             };
 
-        case 'PRODUCT_FETCH_FAILED':
+        case PRODUCT_FETCH_FAILED:
             return {
                 isLoading: false,
                 product: state.product,

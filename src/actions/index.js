@@ -1,3 +1,5 @@
+// @flow
+
 import {
     TOP_SELLING_PRODUCTS_REQUESTED,
     PRODUCT_LIST_REQUESTED,

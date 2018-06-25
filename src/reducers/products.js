@@ -4,7 +4,11 @@ import {
     PRODUCT_LIST_FETCH_FAILED,
 } from '../constants';
 
-const products = (state = { isLoading: false, list: [], page: 1, isRequestedBefore: false}, action) => {
+import type {
+    ProductsStateType
+} from '../types';
+
+const products = (state: ProductsStateType = { isLoading: false, list: [], page: 1, isRequestedBefore: false}, action: Object) => {
     switch (action.type) {
         case PRODUCT_LIST_REQUESTED:
             return {

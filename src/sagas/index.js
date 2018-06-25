@@ -14,7 +14,7 @@ import {
     PRODUCT_FETCH_FAILED,
 } from '../constants';
 
-function* rootSaga(): void {
+function* rootSaga() {
     yield takeEvery(TOP_SELLING_PRODUCTS_REQUESTED, getTopSellingProductsSaga);
     yield takeEvery(PRODUCT_LIST_REQUESTED, getProductsListSaga);
     yield takeEvery(PRODUCT_REQUESTED, getProductSaga);
