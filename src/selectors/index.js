@@ -54,3 +54,13 @@ export const getTopSellingProductsRequestState = createSelector(
     state => state.topSellingProducts.isRequestedBefore,
     isRequestedBefore => isRequestedBefore,
 );
+
+export const getCartPopupShonwState = createSelector(
+    state => state.cartPopup.isShown,
+    isShown => isShown,
+);
+
+export const getCartPopupProduct = createSelector(
+    state => state.cartPopup.lastAddedProduct,
+    lastAddedProduct => lastAddedProduct,
+)

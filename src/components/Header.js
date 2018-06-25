@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 import CartIcon from '../containers/CartIcon';
+import CartPopup from '../containers/CartPopup';
 
 const Header = () => {
     return (
@@ -37,6 +38,7 @@ const Header = () => {
                 <div className="header__cart">
                     <CartIcon />
                 </div>
+                <CartPopup />
             </div>
         </header>
     );

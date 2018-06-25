@@ -21,14 +21,12 @@ const cartPopup = (state: CartPopupStateType = {
 }, action: Object) => {
     switch (action.type) {
         case CART_POPUP_SHOW:
-            console.log(action);
             return {
-                isShow: true,
+                isShown: true,
                 lastAddedProduct: action.payload.product,
             };
 
         case CART_POPUP_HIDE:
-            console.log(action);
             return {
                 isShown: false,
                 lastAddedProduct: state.lastAddedProduct,
