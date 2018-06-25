@@ -70,6 +70,11 @@ class Cart extends React.PureComponent {
     }
 };
 
+Cart.proptypes = {
+    products: PropTypes.array.isRequired,
+    removeProduct: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => {
     return {
         products: state.cart.list,

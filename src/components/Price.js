@@ -8,7 +8,7 @@ const Price = (props) => {
     return (
         <span className="price">
             <FormattedNumber 
-                value={price} 
+                value={price ? price : 0} 
                 // eslint-disable-next-line
                 style="currency"
                 currency="USD"

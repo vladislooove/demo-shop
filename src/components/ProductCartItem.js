@@ -36,4 +36,14 @@ const ProductCartItem = (props) => {
     );
 };
 
+ProductCartItem.proptypes = {
+    id: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    shortDescription: PropTypes.string.isRequired,
+    added: PropTypes.string.isRequired,
+    onRemoveClick: PropTypes.func.isRequired,
+}
+
 export default ProductCartItem;
