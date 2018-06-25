@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
+import CartIcon from '../containers/CartIcon';
+
 const Header = () => {
     return (
         <header className="header">
@@ -32,6 +34,9 @@ const Header = () => {
                         </NavLink>
                     </li>
                 </nav>
+                <div className="header__cart">
+                    <CartIcon />
+                </div>
             </div>
         </header>
     );

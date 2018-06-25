@@ -17,4 +17,8 @@ const Price = (props) => {
     );
 };
 
+Price.proptypes = {
+    price: PropTypes.number.isRequired,
+};
+
 export default Price;
