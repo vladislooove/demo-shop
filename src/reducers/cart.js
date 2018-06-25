@@ -5,11 +5,11 @@ const card = (state = { isLoading: false, list: []}, action) => {
             return {
                 isLoading: false,
                 list: [
-                    ...state.list,
                     {
                         ...action.payload,
                         added: new Date(),
                     },
+                    ...state.list,
                 ],
             };
 

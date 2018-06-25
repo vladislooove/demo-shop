@@ -19,15 +19,17 @@ const ProductCartItem = (props) => {
                 <div className="product-cart-item__description">
                     {shortDescription}
                 </div>
-                <div className="product-cart-item__price">
-                    <Price price={price} />
-                </div>
-                <div className="product-cart-item__date-added">
-                    <FormattedRelative value={added} />
-                </div>
-                <div className="product-cart-item__remove">
-                    remove
-                </div>
+            </div>
+            <div className="product-cart-item__price">
+                <Price price={price} />
+            </div>
+            <div className="product-cart-item__date-added">
+                <FormattedRelative value={added} />
+            </div>
+            <div className="product-cart-item__remove">
+                <button className="product-cart-item__remove-btn">
+                    Remove
+                </button>
             </div>
         </div>
     );
