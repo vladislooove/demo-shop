@@ -45,3 +45,9 @@ export type CartPopupStateType = {
     isShown: boolean,
     lastAddedProduct: ProductType,
 };
+
+export type NotificationStateType = {
+    isShown: boolean,
+    message: string,
+    type: string,
+};

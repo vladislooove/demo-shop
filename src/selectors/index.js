@@ -60,7 +60,22 @@ export const getCartPopupShonwState = createSelector(
     isShown => isShown,
 );
 
-export const getCartPopupProduct = createSelector(
+export const getCartPopupProductState = createSelector(
     state => state.cartPopup.lastAddedProduct,
     lastAddedProduct => lastAddedProduct,
-)
+);
+
+export const getNotificationShownState = createSelector(
+    state => state.notification.isShown,
+    isShown => isShown,
+);
+
+export const getNotificationMessageState = createSelector(
+    state => state.notification.message,
+    message => message,
+);
+
+export const getNotificationTypeState = createSelector(
+    state => state.notification.type,
+    type => type,
+);

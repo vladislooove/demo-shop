@@ -3,6 +3,8 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
+import Notification from '../containers/Notification';
+
 const Layout = (props) => {
     return ([
         <Header key="header" />,
@@ -12,6 +14,7 @@ const Layout = (props) => {
             </div>
         </div>,
         <Footer key="footer" />,
+        <Notification key="notifications" />,
     ]);
 };
 

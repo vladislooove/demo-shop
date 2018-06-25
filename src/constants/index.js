@@ -17,3 +17,6 @@ export const PRODUCT_REMOVED_FROM_CART: string = 'PRODUCT_REMOVED_FROM_CART';
 
 export const CART_POPUP_SHOW: string = 'CART_POPUP_SHOW';
 export const CART_POPUP_HIDE: string = 'CART_POPUP_HIDE';
+
+export const NOTIFICATION_SHOW: string = 'NOTIFICATION_SHOW';
+export const NOTIFICATION_HIDE: string = 'NOTIFICATION_HIDE';

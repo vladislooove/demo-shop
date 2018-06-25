@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import {
     getCartPopupShonwState,
-    getCartPopupProduct,
+    getCartPopupProductState,
 } from '../selectors';
 
 class CartPopup extends React.PureComponent {
@@ -31,7 +31,7 @@ class CartPopup extends React.PureComponent {
 const mapStateToProps = (state) => {
     return {
         isShown: getCartPopupShonwState(state),
-        product: getCartPopupProduct(state),
+        product: getCartPopupProductState(state),
     }
 };
 
