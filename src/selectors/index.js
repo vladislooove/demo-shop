@@ -36,7 +36,7 @@ export const getProductsPageState = createSelector(
 );
 
 export const getProductsRequestState = createSelector(
-    state => state.product.isRequestedBefore,
+    state => state.products.isRequestedBefore,
     isRequestedBefore => isRequestedBefore,
 );
 
