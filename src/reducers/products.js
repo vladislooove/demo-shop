@@ -1,6 +1,12 @@
+import {
+    PRODUCT_LIST_REQUESTED,
+    PRODUCT_LIST_FETCHED_SUCCESSFULLY,
+    PRODUCT_LIST_FETCH_FAILED,
+} from '../constants';
+
 const products = (state = { isLoading: false, list: [], page: 1, isRequestedBefore: false}, action) => {
     switch (action.type) {
-        case 'PRODUCT_LIST_REQUESTED':
+        case PRODUCT_LIST_REQUESTED:
             return {
                 isLoading: true,
                 list: state.list,
@@ -8,7 +14,7 @@ const products = (state = { isLoading: false, list: [], page: 1, isRequestedBefo
                 isRequestedBefore: state.isRequestedBefore,
             };
         
-        case 'PRODUCT_LIST_FETCHED_SUCCESSFULLY':
+        case PRODUCT_LIST_FETCHED_SUCCESSFULLY:
             return {
                 isLoading: false,
                 list: [
@@ -19,7 +25,7 @@ const products = (state = { isLoading: false, list: [], page: 1, isRequestedBefo
                 isRequestedBefore: true,
             };
 
-        case 'PRODUCT_LIST_FETCH_FAILED':
+        case PRODUCT_LIST_FETCH_FAILED:
             return {
                 isLoading: false,
                 list: state.list,

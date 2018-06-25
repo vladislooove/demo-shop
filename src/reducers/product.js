@@ -1,3 +1,8 @@
+import {
+    PRODUCT_REQUESTED,
+    PRODUCT_FETCHED_SUCCESSFULLY,
+} from '../constants';
+
 const product = (state = { 
     isLoading: false, 
     product: {
@@ -9,13 +14,13 @@ const product = (state = {
     }
 }, action) => {
     switch (action.type) {
-        case 'PRODUCT_REQUESTED':
+        case PRODUCT_REQUESTED:
             return {
                 isLoading: true,
                 product: state.product
             };
 
-        case 'PRODUCT_FETCHED_SUCCESSFULLY':
+        case PRODUCT_FETCHED_SUCCESSFULLY:
             return {
                 isLoading: false,
                 product: {

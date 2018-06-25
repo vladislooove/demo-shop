@@ -1,6 +1,11 @@
+import {
+    PRODUCT_ADDED_TO_CART,
+    PRODUCT_REMOVED_FROM_CART,
+} from '../constants';
+
 const card = (state = { isLoading: false, list: []}, action) => {
     switch (action.type) {
-        case 'PRODUCT_ADDED_TO_CART':
+        case PRODUCT_ADDED_TO_CART:
             return {
                 isLoading: false,
                 list: [
@@ -12,7 +17,7 @@ const card = (state = { isLoading: false, list: []}, action) => {
                 ],
             };
 
-        case 'PRODUCT_REMOVED_FROM_CART':
+        case PRODUCT_REMOVED_FROM_CART:
             const newList = state.list.filter((product) => {
                 return !(product.id === action.payload.id && product.added === action.payload.dateAdded);
             });
