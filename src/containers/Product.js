@@ -18,11 +18,14 @@ class Product extends React.PureComponent {
         const { isLoading, product } = this.props;
         const { name, img, price, description } = product;
 
+        if (isLoading) {
+            return (
+                <Loader />
+            );
+        }
+
         return (
             <div className="product">
-
-                {!isLoading && <Loader />}
-
                 <div className="product__media-wrapper">
                     <picture className="product__media">
                         <img src={img} alt={name} className="product__img" />
