@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedRelative, FormattedNumber } from 'react-intl';
+import { FormattedRelative } from 'react-intl';
 import { Link } from 'react-router-dom';
+
+import Price from './Price';
 
 const ProductCard = (props) => {
     const { id, name, img, shortDescription, price, topSelling, expirationDate } = props;
@@ -15,12 +17,7 @@ const ProductCard = (props) => {
             </picture>
             <h2 className="product-card__title">{name}</h2>
             <span className="product-card__price">
-                <FormattedNumber 
-                    value={price} 
-                    // eslint-disable-next-line
-                    style="currency"
-                    currency="USD"
-                    minimumFractionDigits={2} /> 
+                <Price price={price} />
             </span>
             <div className="product-card__short-description">
                 {shortDescription.length > 100 ? `${shortDescription.substring(0, 100)}...` : shortDescription}

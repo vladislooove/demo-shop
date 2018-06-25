@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { getProduct } from '../actions';
 
 import Loader from '../components/Loader';
+import Price from '../components/Price';
 
 class Product extends React.PureComponent {
     
@@ -36,7 +37,7 @@ class Product extends React.PureComponent {
                         {name}
                     </h1>
                     <div className="product__price">
-                        {price}
+                        <Price price={price} />
                     </div>
                     <div className="product__buy-section">buy</div>
                     <div className="product__description">
