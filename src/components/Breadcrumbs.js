@@ -6,38 +6,38 @@ const Breadcrumbs = (props) => {
     const links = props.links;
 
     return (
-        <ul className="bradcrumbs">
+        <ul className="breadcrumbs">
             <li className="breadcrumbs__item">
                 <Link className="breadcrumbs__link"
                       to="/">
                     Home
                 </Link>
-                {
-                    links.map((link, index) => {
-                        if (index === (links.length - 1)) {
-                            return (
-                                <li className="breadcrumbs__item"
-                                    key={index}>
-                                    <span className="breadcrumbs__link breadcrumbs__link--active">
-                                        {link.name}
-                                    </span>
-                                </li>
-                            );
-                        }
-
+            </li>
+            {
+                links.map((link, index) => {
+                    if (index === (links.length - 1)) {
                         return (
                             <li className="breadcrumbs__item"
                                 key={index}>
-                                <Link className="breadcrumbs__link"
-                                    to={link.path}
-                                    key={index}>
+                                <span className="breadcrumbs__link breadcrumbs__link--active">
                                     {link.name}
-                                </Link>
+                                </span>
                             </li>
                         );
-                    })
-                }
-            </li>
+                    }
+
+                    return (
+                        <li className="breadcrumbs__item"
+                            key={index}>
+                            <Link className="breadcrumbs__link"
+                                to={link.path}
+                                key={index}>
+                                {link.name}
+                            </Link>
+                        </li>
+                    );
+                })
+            }
         </ul>
     );
 };
