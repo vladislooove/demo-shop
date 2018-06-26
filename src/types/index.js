@@ -52,3 +52,8 @@ export type NotificationType = {
     type: string,
     id: number,
 };
+
+export type LocaleType = {
+    isActive: boolean
+    name: string,
+};

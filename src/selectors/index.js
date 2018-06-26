@@ -6,6 +6,7 @@ import type {
     ProductCartType,
     ProductType,
     NotificationType,
+    LocaleType,
 } from '../types';
 
 export const getCartState: Object = createSelector(
@@ -83,7 +84,7 @@ export const getLastViewedProductsState = createSelector(
     (lastViewedProducts: Array<ProductType>) => lastViewedProducts,
 );
 
-export const getLocaleState = createSelector(
-    (state: Object) => state.locale,
-    (locale: string) => locale,
+export const getLocalesState = createSelector(
+    (state: Object) => state.locales,
+    (locales: Array<LocaleType>) => locales,
 )

@@ -2,21 +2,27 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { connect } from 'react-redux';
 
-import { getLocaleState } from '../selectors';
+import { getLocalesState } from '../selectors';
 
 class Translations extends React.Component {
     render() {
-        return (
-            <IntlProvider locale="en">
-                {React.Children.only(this.props.children)}
-            </IntlProvider>
-        );
+        return this.props.locales.map((locale) => {
+            if (locale.isActive) {
+                return (
+                    <IntlProvider locale={locale.name} key={locale.name}>
+                        {React.Children.only(this.props.children)}
+                    </IntlProvider>    
+                );
+            }
+
+            return null;
+        })
     }
 };
 
 const mapStateToProps = state => {
     return {
-        locale: getLocaleState(state),
+        locales: getLocalesState(state),
     };
 };
 

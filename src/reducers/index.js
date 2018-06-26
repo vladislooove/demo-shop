@@ -7,7 +7,7 @@ import cart from './cart';
 import cartPopup from './cart-popup';
 import notification from './notification';
 import lastViewedProducts from './lastViewedProducts';
-import locale from './locale';
+import locales from './locales';
 
 const combinedStore = combineReducers({
     topSellingProducts,
@@ -17,7 +17,7 @@ const combinedStore = combineReducers({
     cartPopup,
     notification,
     lastViewedProducts,
-    locale,
+    locales,
 });
 
 export default combinedStore;

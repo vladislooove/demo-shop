@@ -8,6 +8,7 @@ import {
     PRODUCT_REMOVED_FROM_CART,
     LAST_VIEWED_PRODUCT_ADD,
     NOTIFICATION_HIDE,
+    LOCALE_CHANGE,
 } from '../constants';
 
 import type {
@@ -66,5 +67,12 @@ export const hideNotification = (id: number): Object => {
     return {
         type: NOTIFICATION_HIDE,
         payload: id,
+    };
+};
+
+export const localeChange = (locale: string): Object => {
+    return {
+        type: LOCALE_CHANGE,
+        payload: locale,
     };
 };

@@ -4,6 +4,7 @@ import logo from '../assets/logo.png';
 
 import CartIcon from '../containers/CartIcon';
 import CartPopup from '../containers/CartPopup';
+import LocaleSwitcher from '../containers/LocaleSwitcher';
 
 const Header = () => {
     return (
@@ -37,6 +38,9 @@ const Header = () => {
                 </nav>
                 <div className="header__cart">
                     <CartIcon />
+                </div>
+                <div className="header__locales">
+                    <LocaleSwitcher />
                 </div>
                 <CartPopup />
             </div>

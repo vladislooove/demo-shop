@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { IntlProvider } from 'react-intl';
 
 import combinedStore from './reducers/';
 import rootSaga from './sagas';
