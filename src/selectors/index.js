@@ -82,3 +82,8 @@ export const getLastViewedProductsState = createSelector(
     (state: Object) => state.lastViewedProducts,
     (lastViewedProducts: Array<ProductType>) => lastViewedProducts,
 );
+
+export const getLocaleState = createSelector(
+    (state: Object) => state.locale,
+    (locale: string) => locale,
+)

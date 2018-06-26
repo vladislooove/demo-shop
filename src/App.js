@@ -8,6 +8,8 @@ import { IntlProvider } from 'react-intl';
 import combinedStore from './reducers/';
 import rootSaga from './sagas';
 
+import Translations from './containers/Translations';
+
 import './styles/index.css';
 
 import Home from './screens/Home';
@@ -24,7 +26,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <IntlProvider locale="en">
+                <Translations>
                     <BrowserRouter>
                         <Switch>
                             <Route exact path="/" component={Home} />
@@ -33,7 +35,7 @@ class App extends Component {
                             <Route path="/cart" component={Cart} />
                         </Switch>
                     </BrowserRouter>
-                </IntlProvider>
+                </Translations>
             </Provider>
         );
     }
