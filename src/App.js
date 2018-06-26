@@ -16,8 +16,8 @@ import Products from './screens/Products';
 import Product from './screens/Product';
 import Cart from './screens/Cart';
 
-const sagaMiddleware: any = createSagaMiddleware();
-const store: Store = createStore(combinedStore, applyMiddleware(sagaMiddleware));
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(combinedStore, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
