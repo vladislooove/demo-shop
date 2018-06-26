@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedRelative } from 'react-intl';
+import { FormattedRelative, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
 import Price from './Price';
@@ -25,11 +25,11 @@ const ProductCard = (props) => {
 
             {topSelling && expirationDate &&
                 <small className="product-card__tip">
-                    Expires <FormattedRelative value={expirationDate} />
+                    <FormattedMessage id="app.product.expires_label" /> <FormattedRelative value={expirationDate} />
                 </small>
             }
 
-            {topSelling && <div className="product-card__label">Top</div>}
+            {topSelling && <div className="product-card__label"><FormattedMessage id="app.product.top_selling_label" /></div>}
         </Link>
     );
 };

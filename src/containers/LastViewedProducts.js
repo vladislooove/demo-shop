@@ -15,7 +15,7 @@ class LastViewedProducts extends React.PureComponent {
             <ProductList
                 isLoading={false}
                 products={this.props.lastViewedProducts}
-                title="Last viewed products" />
+                title="app.header.last_viewed" />
         );
     }
 }

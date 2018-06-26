@@ -6,10 +6,10 @@ import Product from '../containers/Product';
 
 const ProductScreen = (props) => {
     const productBreadcrumbsLinks = [{
-        name: 'products',
+        name: 'app.navigation.products',
         path: '/products'
     }, {
-        name: 'product',
+        name: 'app.navigation.product',
         path: `/products/${props.match.params.id}`,
     }];
         

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 const Breadcrumbs = (props) => {
     const links = props.links;
@@ -10,7 +11,7 @@ const Breadcrumbs = (props) => {
             <li className="breadcrumbs__item">
                 <Link className="breadcrumbs__link"
                       to="/">
-                    Home
+                    <FormattedMessage id="app.navigation.home" />
                 </Link>
             </li>
             {
@@ -20,7 +21,7 @@ const Breadcrumbs = (props) => {
                             <li className="breadcrumbs__item"
                                 key={index}>
                                 <span className="breadcrumbs__link breadcrumbs__link--active">
-                                    {link.name}
+                                    <FormattedMessage id={link.name} />
                                 </span>
                             </li>
                         );
@@ -32,7 +33,7 @@ const Breadcrumbs = (props) => {
                             <Link className="breadcrumbs__link"
                                 to={link.path}
                                 key={index}>
-                                {link.name}
+                                    <FormattedMessage id={link.name} />
                             </Link>
                         </li>
                     );

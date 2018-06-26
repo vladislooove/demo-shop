@@ -1,0 +1,32 @@
+{
+    "app.header.top_selling": "Топ продаж",
+    "app.header.last_viewed": "Последние просмотренные товары",
+    "app.header.products": "Товары",
+    "app.header.cart": "Корзина",
+
+    "app.navigation.home": "Главная",
+    "app.navigation.products": "Товары",
+    "app.navigation.product": "Товар",
+    "app.navigation.cart": "Корзина",
+
+    "app.product.top_selling_label": "Топ",
+    "app.product.expires_label": "Исчезнет",
+
+    "cart.label.cart": "Корзина",
+    "cart.label.image": "Фото",
+    "cart.label.info": "Информация",
+    "cart.label.price": "Цена",
+    "cart.label.added": "Добавлено",
+    "cart.label.remove": "Удалить",
+    "cart.label.summary": "Итого",
+    "cart.label.last_added": "Вы добавили",
+
+    "btn.remove": "Удалить",
+    "btn.buy": "Купить",
+    "btn.load_more": "Смотреть еще",
+
+    "msg.no_items": "Пока что ничего нет...",
+    "msg.error": "Ой, что-то пошло не так...",
+    "msg.product_added_to_cart": "Товар добавлен в корзину",
+    "msg.product_removed_from_cart": "Товар удален из корзины"
+}

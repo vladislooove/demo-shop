@@ -1,0 +1,32 @@
+{
+    "app.header.top_selling": "Топ продажів",
+    "app.header.last_viewed": "Останні переглянуті",
+    "app.header.products": "Товари",
+    "app.header.cart": "Кошик",
+
+    "app.navigation.home": "Головна",
+    "app.navigation.products": "Товари",
+    "app.navigation.product": "Товар",
+    "app.navigation.cart": "Кошик",
+
+    "app.product.top_selling_label": "Топ",
+    "app.product.expires_label": "Зникне",
+
+    "cart.label.cart": "Кошик",
+    "cart.label.image": "Зображення",
+    "cart.label.info": "Інформація",
+    "cart.label.price": "Ціна",
+    "cart.label.added": "Додано",
+    "cart.label.remove": "Видалити",
+    "cart.label.summary": "Загалом",
+    "cart.label.last_added": "Ви додали",
+
+    "btn.remove": "Видалити",
+    "btn.buy": "Купити",
+    "btn.load_more": "Дивитися більше",
+
+    "msg.no_items": "Поки що нічого немає...",
+    "msg.error": "Схоже, щось пішло не так...",
+    "msg.product_added_to_cart": "Товар додано до кошика",
+    "msg.product_removed_from_cart": "Товар видалено з кошика"
+}

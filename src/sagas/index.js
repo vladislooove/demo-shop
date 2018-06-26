@@ -40,7 +40,7 @@ function* getTopSellingProductsSaga(action) {
     } catch (e) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCH_FAILED });
         yield put({ type: NOTIFICATION_ADD, payload: {
-            message: 'Oops, something went wrong...',
+            message: 'msg.error',
             type: 'error',
             id: parseInt((Math.random() * 1000), 10),
         } });
@@ -54,7 +54,7 @@ function* getProductsListSaga(action) {
     } catch (e) {
         yield put({ type: PRODUCT_LIST_FETCH_FAILED });
         yield put({ type: NOTIFICATION_ADD, payload: {
-            message: 'Oops, something went wrong...',
+            message: 'msg.error',
             type: 'error',
             id: parseInt((Math.random() * 1000), 10),
         } });
@@ -69,7 +69,7 @@ function* getProductSaga(action) {
     } catch (e) {
         yield put({ type: PRODUCT_FETCH_FAILED });
         yield put({ type: NOTIFICATION_ADD, payload: {
-            message: 'Oops, something went wrong...',
+            message: 'msg.error',
             type: 'error',
             id: parseInt((Math.random() * 1000), 10),
         } });
@@ -82,7 +82,7 @@ function* addProductToCartSaga(action) {
     } });
 
     yield put({ type: NOTIFICATION_ADD, payload: {
-        message: 'Product added to your cart',
+        message: 'msg.product_added_to_cart',
         type: 'success',
         id: parseInt((Math.random() * 1000), 10),
     } });
@@ -94,7 +94,7 @@ function* addProductToCartSaga(action) {
 
 function* removeProductFromCartSaga(action) {
     yield put({ type: NOTIFICATION_ADD, payload: {
-        message: 'Product removed from your cart',
+        message: 'msg.product_removed_from_cart',
         type: 'success',
         id: parseInt((Math.random() * 1000), 10),
     } });

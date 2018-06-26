@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import logo from '../assets/logo.png';
 
 import CartIcon from '../containers/CartIcon';
@@ -24,7 +25,7 @@ const Header = () => {
                             exact
                             className="header__nav-link"
                             activeClassName="header__nav-link--active">
-                            Home
+                            <FormattedMessage id="app.navigation.home" />
                         </NavLink>
                     </li>
                     <li className="header__nav-item">
@@ -32,7 +33,7 @@ const Header = () => {
                             to="/products"
                             className="header__nav-link"
                             activeClassName="header__nav-link--active">
-                            Products
+                            <FormattedMessage id="app.navigation.products" />
                         </NavLink>
                     </li>
                 </nav>

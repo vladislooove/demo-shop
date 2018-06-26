@@ -6,7 +6,7 @@ import Products from '../containers/Products';
 
 const ProductsScreen = () => {
     const productsBreadcrumbsLinks = [{
-        name: 'products',
+        name: 'app.navigation.products',
         path: '/products'
     }];
         

@@ -5,7 +5,7 @@
     @extend %list-unstyled;
 
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 
     &__item {
         font-size: 12px;

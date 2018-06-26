@@ -25,7 +25,7 @@ class TopSellingProducts extends React.PureComponent {
                     isLoading={this.props.isLoading}
                     products={this.props.products}
                     topSelling
-                    title="Top selling products" />
+                    title="app.header.top_selling" />
         );
     }
 }

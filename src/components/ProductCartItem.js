@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedRelative } from 'react-intl';
+import { FormattedRelative, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
 import Price from '../components/Price';
@@ -30,7 +30,7 @@ const ProductCartItem = (props) => {
             <div className="product-cart-item__remove">
                 <button className="product-cart-item__remove-btn"
                     onClick={ () => {onRemoveClick(id, added)}}>
-                    Remove
+                    <FormattedMessage id="btn.remove" />
                 </button>
             </div>
         </div>

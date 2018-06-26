@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import { getProduct, cartProductAdd, lastAddedProductAdd } from '../actions';
 
@@ -51,7 +52,7 @@ class Product extends React.PureComponent {
                     </div>
                     <div className="product__buy-section">
                         <button className="product__buy-btn" onClick={this.onBuyHandler.bind(this)}>
-                            Buy
+                            <FormattedMessage id="btn.buy" />
                         </button>
                     </div>
                     <div className="product__description">

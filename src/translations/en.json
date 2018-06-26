@@ -1,0 +1,29 @@
+{
+    "app.header.top_selling": "Top selling products",
+    "app.header.last_viewed": "Last viewed products",
+    "app.header.products": "Products",
+    "app.header.cart": "Cart",
+
+    "app.navigation.home": "Home",
+    "app.navigation.products": "Products",
+    "app.navigation.product": "Product",
+    "app.navigation.cart": "Cart",
+
+    "app.product.top_selling_label": "Top",
+    "app.product.expires_label": "Expires",
+
+    "cart.label.cart": "Cart",
+    "cart.label.image": "Image",
+    "cart.label.info": "Info",
+    "cart.label.price": "Price",
+    "cart.label.added": "Added",
+    "cart.label.remove": "Remove",
+    "cart.label.summary": "Summary",
+    "cart.label.last_added": "You added",
+
+    "btn.remove": "Remove",
+    "btn.buy": "Buy",
+    "btn.load_more": "Load more",
+
+    "msg.no_items": "There are no items yet..."
+}

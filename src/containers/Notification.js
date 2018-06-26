@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 import { getNotificationState } from '../selectors';
 
@@ -17,7 +18,7 @@ class Notification extends React.PureComponent {
                             `notification notification--visible notification--${type}` 
                             : `notification notification--${type}` }
                             key={index}>
-                            {message}
+                            <FormattedMessage id={message} />
                             <div className="notification__close"
                                  onClick={ () => { this.props.hideNotification(id) } }>
                                 ✕

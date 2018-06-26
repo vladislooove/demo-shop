@@ -33,7 +33,7 @@ class Products extends React.PureComponent {
                     products={this.props.products}
                     loadMore={this.loadMoreHandler.bind(this)}
                     hasMoreItems={this.props.page <= 3}
-                    title="Products list" />
+                    title="app.header.products" />
         );
     }
 };

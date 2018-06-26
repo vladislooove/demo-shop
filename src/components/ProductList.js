@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import ProductCard from './ProductCard';
 import Loader from './Loader';
@@ -9,7 +10,9 @@ const ProductList = (props) => {
 
     return (
         <section className="products-list">            
-            <h2 className="product-list__title">{title}</h2>
+            <h2 className="product-list__title">
+                <FormattedMessage id={title} />
+            </h2>
 
             <div className="product-list__content">
 
@@ -33,7 +36,7 @@ const ProductList = (props) => {
                 }
 
                 {!products.length > 0 && !isLoading &&
-                    <p>There are no items yet...</p>
+                    <p><FormattedMessage id="msg.no_items" /></p>
                 }
             </div>
             {isLoading && <Loader />}
@@ -42,7 +45,7 @@ const ProductList = (props) => {
                 <div className="product-list__footer">
                     <button className="product-list__load-more"
                             onClick={loadMore}>
-                        View more
+                        <FormattedMessage id="btn.load_more" />
                     </button>
                 </div>
             }

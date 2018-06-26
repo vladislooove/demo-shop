@@ -6,7 +6,7 @@ import Cart from '../containers/Cart';
 
 const CartScreen = () => {
     const cartBreadcrumbsLinks = [{
-        name: 'cart',
+        name: 'app.navigation.cart',
         path: '/cart'
     }];
         

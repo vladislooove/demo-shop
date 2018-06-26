@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 import {
     getCartPopupShonwState,
@@ -14,7 +15,7 @@ class CartPopup extends React.PureComponent {
         return (
             <div className={isShown ? 'cart-popup cart-popup--visible' : 'cart-popup'}>
                 <div className="cart-popup__label">
-                    You added
+                    <FormattedMessage id="cart.label.last_added" />
                 </div>
                 <div className="cart-popup__product">
                     <div className="cart-popup__product-title">

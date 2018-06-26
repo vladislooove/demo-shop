@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import { cartProductRemove } from '../actions';
 import { getCartState } from '../selectors';
@@ -23,24 +24,24 @@ class Cart extends React.PureComponent {
         return (
             <section className="cart">
                 <div className="cart__title">
-                    Cart
+                    <FormattedMessage id="cart.label.cart" />
                 </div>
                 {this.props.products.length > 0 && 
                     <div className="cart__headers">
                         <div>
-                            Image
+                            <FormattedMessage id="cart.label.image" />
                         </div>
                         <div>
-                            Info
+                            <FormattedMessage id="cart.label.info" />
                         </div>
                         <div>
-                            Price
+                            <FormattedMessage id="cart.label.price" />
                         </div>
                         <div>
-                            Added
+                            <FormattedMessage id="cart.label.added" />
                         </div>
                         <div>
-                            Remove
+                            <FormattedMessage id="cart.label.remove" />
                         </div>
                     </div>
                 }
@@ -55,13 +56,13 @@ class Cart extends React.PureComponent {
                             );
                         })
                     :
-                        <p>There are no items yet...</p>
+                        <p><FormattedMessage id="msg.no_items" /></p>
                     }
                 </div>
                 {this.props.products.length > 0 &&
                     <div className="cart__footer">
                         <span className="cart__footer-label">
-                            Summary
+                            <FormattedMessage id="cart.label.summary" />
                         </span>
                         <Price price={this.getSummaryPrice()} />
                     </div>

@@ -6,13 +6,13 @@ import { LOCALE_CHANGE } from '../constants';
 
 const locales = (state: Array<LocaleType> = [
     {
-        isActive: true,
+        isActive: false,
         name: 'en',
     }, {
         isActive: false,
         name: 'ru',
     }, {
-        isActive: false,
+        isActive: true,
         name: 'uk',
     },
 ], action: Object) => {
