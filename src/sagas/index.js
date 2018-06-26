@@ -100,7 +100,7 @@ function* removeProductFromCartSaga(action) {
 }
 
 function* notificationSaga(action) {
-    yield delay(1);
+    yield delay(10);
     yield put({ type: NOTIFICATION_SHOW, payload: action.payload.id })
     yield delay(1500);
     yield put({ type: NOTIFICATION_HIDE, payload: action.payload.id });
