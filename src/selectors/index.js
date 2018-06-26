@@ -1,86 +1,93 @@
+// @flow
+
 import { createSelector } from 'reselect';
 
-export const getCartState = createSelector(
-    state => state.cart.list,
-    products => products,
+import type {
+    ProductCartType,
+    ProductType,
+} from '../types';
+
+export const getCartState: Object = createSelector(
+    (state: Object) => state.cart.list,
+    (products: Array<ProductCartType>) => products,
 );
 
-export const getCartIconState = createSelector(
-    state => state.cart.list,
-    products => products,
+export const getCartIconState: Object = createSelector(
+    (state: Object) => state.cart.list,
+    (products: Array<ProductCartType>) => products,
 );
 
 export const getProductState = createSelector(
-    state => state.product.product,
-    product => product,
+    (state: Object) => state.product.product,
+    (product: ProductType) => product,
 );
 
 export const getProductLoadingState = createSelector(
-    state => state.product.isLoading,
-    isLoading => isLoading,
+    (state: Object) => state.product.isLoading,
+    (isLoading: boolean) => isLoading,
 );
 
 export const getProductsState = createSelector(
-    state => state.products.list,
-    products => products,
+    (state: Object) => state.products.list,
+    (products: Array<ProductType>) => products,
 );
 
 export const getProductsLoadingState = createSelector(
-    state => state.products.isLoading,
-    isLoading => isLoading,
+    (state: Object) => state.products.isLoading,
+    (isLoading: boolean) => isLoading,
 );
 
 export const getProductsPageState = createSelector(
-    state => state.products.page,
-    page => page,
+    (state: Object) => state.products.page,
+    (page: number) => page,
 );
 
 export const getProductsRequestState = createSelector(
-    state => state.products.isRequestedBefore,
-    isRequestedBefore => isRequestedBefore,
+    (state: Object) => state.products.isRequestedBefore,
+    (isRequestedBefore: boolean) => isRequestedBefore,
 );
 
 export const getTopSellingProductsLoadingState = createSelector(
-    state => state.topSellingProducts.isLoading,
-    isLoading => isLoading,
+    (state: Object) => state.topSellingProducts.isLoading,
+    (isLoading: boolean) => isLoading,
 );
 
 export const getTopSellingProductsState = createSelector(
-    state => state.topSellingProducts.list,
-    products => products,
+    (state: Object) => state.topSellingProducts.list,
+    (products: Array<ProductType>) => products,
 );
 
 export const getTopSellingProductsRequestState = createSelector(
-    state => state.topSellingProducts.isRequestedBefore,
-    isRequestedBefore => isRequestedBefore,
+    (state: Object) => state.topSellingProducts.isRequestedBefore,
+    (isRequestedBefore: boolean) => isRequestedBefore,
 );
 
 export const getCartPopupShonwState = createSelector(
-    state => state.cartPopup.isShown,
-    isShown => isShown,
+    (state: Object) => state.cartPopup.isShown,
+    (isShown: boolean) => isShown,
 );
 
 export const getCartPopupProductState = createSelector(
-    state => state.cartPopup.lastAddedProduct,
-    lastAddedProduct => lastAddedProduct,
+    (state: Object) => state.cartPopup.lastAddedProduct,
+    (lastAddedProduct: ProductType) => lastAddedProduct,
 );
 
 export const getNotificationShownState = createSelector(
-    state => state.notification.isShown,
-    isShown => isShown,
+    (state: Object) => state.notification.isShown,
+    (isShown: boolean) => isShown,
 );
 
 export const getNotificationMessageState = createSelector(
-    state => state.notification.message,
-    message => message,
+    (state: Object) => state.notification.message,
+    (message: string) => message,
 );
 
 export const getNotificationTypeState = createSelector(
-    state => state.notification.type,
-    type => type,
+    (state: Object) => state.notification.type,
+    (type: string) => type,
 );
 
 export const getLastViewedProductsState = createSelector(
-    state => state.lastViewedProducts,
-    lastViewedProducts => lastViewedProducts,
+    (state: Object) => state.lastViewedProducts,
+    (lastViewedProducts: Array<ProductType>) => lastViewedProducts,
 );
