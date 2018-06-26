@@ -13,9 +13,7 @@ class Notification extends React.PureComponent {
 
         return (
             <div className={ isShown ? `notification notification--visible notification--${type}` : `notification notification--${type}` }>
-                <div className="notification__container">
-                    {message}
-                </div>
+                {message}
             </div>
         );
     }

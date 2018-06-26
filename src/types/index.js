@@ -20,7 +20,7 @@ export type ProductCartType = {
 
 export type CartStateType = {
     isLoading: boolean,
-    list: Array<ProductCardType>
+    list: Array<ProductCartType>
 };
 
 export type ProductStateType = {
