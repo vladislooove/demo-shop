@@ -11,7 +11,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
+        padding-left: 150px;
     }
 
     &__logo {
@@ -52,5 +53,10 @@
 
     &__cart {
         margin-left: 50px;
+    }
+
+    &__group {
+        display: flex;
+        align-items: center
     }
 }

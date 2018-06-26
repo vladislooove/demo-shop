@@ -36,11 +36,13 @@ const Header = () => {
                         </NavLink>
                     </li>
                 </nav>
-                <div className="header__cart">
-                    <CartIcon />
-                </div>
-                <div className="header__locales">
-                    <LocaleSwitcher />
+                <div className="header__group">
+                    <div className="header__locales">
+                        <LocaleSwitcher />
+                    </div>
+                    <div className="header__cart">
+                        <CartIcon />
+                    </div>
                 </div>
                 <CartPopup />
             </div>
