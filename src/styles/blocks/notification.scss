@@ -7,17 +7,17 @@
 
     position: fixed;
     right: 0;
-    top: -100px;
+    bottom: -100px;
     left: 0;
     z-index: 5;
     padding: 20px;
     font-size: 18px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
     color: #fff;
-    transition-property: top;
+    transition-property: bottom;
 
     &--visible {
-        top: 20px;
+        bottom: 20px;
     }
 
     &--success {
