@@ -17,8 +17,10 @@ import {
     PRODUCT_REMOVED_FROM_CART,
     CART_POPUP_SHOW,
     CART_POPUP_HIDE,
+    NOTIFICATION_ADD,
     NOTIFICATION_SHOW,
     NOTIFICATION_HIDE,
+    NOTIFICATION_REMOVE,
 } from '../constants';
 
 function* rootSaga() {
@@ -27,7 +29,7 @@ function* rootSaga() {
     yield takeEvery(PRODUCT_REQUESTED, getProductSaga);
     yield takeEvery(PRODUCT_ADDED_TO_CART, addProductToCartSaga);
     yield takeEvery(PRODUCT_REMOVED_FROM_CART, removeProductFromCartSaga);
-    yield takeEvery(NOTIFICATION_SHOW, notificationSaga);
+    yield takeEvery(NOTIFICATION_ADD, notificationSaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -36,9 +38,10 @@ function* getTopSellingProductsSaga(action) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCHED_SUCCESSFULLY, payload: response.data.data });
     } catch (e) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCH_FAILED });
-        yield put({ type: NOTIFICATION_SHOW, payload: {
+        yield put({ type: NOTIFICATION_ADD, payload: {
             message: 'Oops, something went wrong...',
             type: 'error',
+            id: parseInt((Math.random() * 1000), 10),
         } });
     }
 }
@@ -49,9 +52,10 @@ function* getProductsListSaga(action) {
         yield put({ type: PRODUCT_LIST_FETCHED_SUCCESSFULLY, payload: response.data.data });
     } catch (e) {
         yield put({ type: PRODUCT_LIST_FETCH_FAILED });
-        yield put({ type: NOTIFICATION_SHOW, payload: {
+        yield put({ type: NOTIFICATION_ADD, payload: {
             message: 'Oops, something went wrong...',
             type: 'error',
+            id: parseInt((Math.random() * 1000), 10),
         } });
     }
 }
@@ -63,9 +67,10 @@ function* getProductSaga(action) {
         yield put({ type: PRODUCT_FETCHED_SUCCESSFULLY, payload: response.data });
     } catch (e) {
         yield put({ type: PRODUCT_FETCH_FAILED });
-        yield put({ type: NOTIFICATION_SHOW, payload: {
+        yield put({ type: NOTIFICATION_ADD, payload: {
             message: 'Oops, something went wrong...',
             type: 'error',
+            id: parseInt((Math.random() * 1000), 10),
         } });
     }
 }
@@ -75,9 +80,10 @@ function* addProductToCartSaga(action) {
         product: action.payload,
     } });
 
-    yield put({ type: NOTIFICATION_SHOW, payload: {
+    yield put({ type: NOTIFICATION_ADD, payload: {
         message: 'Product added to your cart',
         type: 'success',
+        id: parseInt((Math.random() * 1000), 10),
     } });
 
     yield delay(3000);
@@ -86,16 +92,20 @@ function* addProductToCartSaga(action) {
 }
 
 function* removeProductFromCartSaga(action) {
-    yield put({ type: NOTIFICATION_SHOW, payload: {
+    yield put({ type: NOTIFICATION_ADD, payload: {
         message: 'Product removed from your cart',
         type: 'success',
+        id: parseInt((Math.random() * 1000), 10),
     } });
 }
 
 function* notificationSaga(action) {
+    yield delay(1);
+    yield put({ type: NOTIFICATION_SHOW, payload: action.payload.id })
     yield delay(1500);
-
-    yield put({ type: NOTIFICATION_HIDE });
+    yield put({ type: NOTIFICATION_HIDE, payload: action.payload.id });
+    yield delay(1000);
+    yield put({ type: NOTIFICATION_REMOVE, payload: action.payload.id });
 }
 
 

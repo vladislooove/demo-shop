@@ -16,6 +16,13 @@
     color: #fff;
     transition-property: bottom;
 
+    @for $i from 1 through 100 {
+        &:nth-child(#{$i}) {
+            z-index:  $i * 5;
+            transform: translateY(-10% * $i)
+        }
+    }
+
     &--visible {
         bottom: 20px;
     }

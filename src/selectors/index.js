@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import type {
     ProductCartType,
     ProductType,
+    NotificationType,
 } from '../types';
 
 export const getCartState: Object = createSelector(
@@ -72,19 +73,9 @@ export const getCartPopupProductState = createSelector(
     (lastAddedProduct: ProductType) => lastAddedProduct,
 );
 
-export const getNotificationShownState = createSelector(
-    (state: Object) => state.notification.isShown,
-    (isShown: boolean) => isShown,
-);
-
-export const getNotificationMessageState = createSelector(
-    (state: Object) => state.notification.message,
-    (message: string) => message,
-);
-
-export const getNotificationTypeState = createSelector(
-    (state: Object) => state.notification.type,
-    (type: string) => type,
+export const getNotificationState = createSelector(
+    (state: Object) => state.notification,
+    (notifications: Array<NotificationType>) => notifications,
 );
 
 export const getLastViewedProductsState = createSelector(
