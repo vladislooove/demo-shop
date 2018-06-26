@@ -15,15 +15,15 @@ const ProductList = (props) => {
 
                 {products.length > 0 && 
                     products.map((product) => {
-                        const { id, name, image_link, short_description, price, expires } = product;
+                        const { id, name, img, shortDescription, price, expires } = product;
 
                         return (
                             <ProductCard
                                 key={id}
                                 id={id}
                                 name={name}
-                                img={image_link}
-                                shortDescription={short_description}
+                                img={img}
+                                shortDescription={shortDescription}
                                 price={price}
                                 topSelling={topSelling}
                                 expirationDate={expires}

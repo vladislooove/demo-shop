@@ -1,3 +1,5 @@
+// @flow
+
 import type { NotificationStateType } from '../types';
 
 import {

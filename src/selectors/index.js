@@ -79,3 +79,8 @@ export const getNotificationTypeState = createSelector(
     state => state.notification.type,
     type => type,
 );
+
+export const getLastViewedProductsState = createSelector(
+    state => state.lastViewedProducts,
+    lastViewedProducts => lastViewedProducts,
+);

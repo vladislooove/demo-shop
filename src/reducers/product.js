@@ -33,10 +33,10 @@ const product = (state: ProductStateType = {
                 product: {
                     id: action.payload.id,
                     description: action.payload.description,
-                    img: action.payload.image_link,
+                    img: action.payload.img,
                     name: action.payload.name,
                     price: action.payload.price,
-                    shortDescription: action.payload.short_description,
+                    shortDescription: action.payload.shortDescription,
                 },
             };
 

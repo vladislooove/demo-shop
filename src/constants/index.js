@@ -20,3 +20,5 @@ export const CART_POPUP_HIDE: string = 'CART_POPUP_HIDE';
 
 export const NOTIFICATION_SHOW: string = 'NOTIFICATION_SHOW';
 export const NOTIFICATION_HIDE: string = 'NOTIFICATION_HIDE';
+
+export const LAST_VIEWED_PRODUCT_ADD = 'LAST_VIEWED_PRODUCT_ADD';

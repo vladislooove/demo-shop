@@ -58,7 +58,7 @@ function* getProductsListSaga(action) {
 
 function* getProductSaga(action) {
     try {
-        const requesId = action.payload.id > 2 ? (Math.floor(Math.random() * 2)) : action.payload.id; 
+        const requesId = action.payload.id > 7 ? (Math.floor(Math.random() * 7)) : action.payload.id; 
         const response = yield call(Api.getProduct, requesId);
         yield put({ type: PRODUCT_FETCHED_SUCCESSFULLY, payload: response.data });
     } catch (e) {
