@@ -8,7 +8,6 @@ import { getProductState, getProductLoadingState, getLastViewedProductsState } f
 
 import Loader from '../components/Loader';
 import Price from '../components/Price';
-import ProductList from '../components/ProductList';
 
 class Product extends React.PureComponent {
     
@@ -36,7 +35,7 @@ class Product extends React.PureComponent {
             );
         }
 
-        return ([
+        return (
             <div className="product" key="product">
                 <div className="product__media-wrapper">
                     <picture className="product__media">
@@ -59,16 +58,8 @@ class Product extends React.PureComponent {
                         {description}
                     </div>
                 </div>
-            </div>,
-            <div key="lastViewedProducts">
-                { this.props.lastViewedProducts.length > 1 && 
-                    <ProductList
-                        isLoading={false}
-                        products={this.props.lastViewedProducts}
-                        title="Last viewed products" />
-                }
-            </div>    
-        ]);
+            </div>
+        );
     }
 };
 
