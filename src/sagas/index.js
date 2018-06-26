@@ -38,7 +38,7 @@ function* getTopSellingProductsSaga(action) {
         yield put({ type: TOP_SELLING_PRODUCTS_FETCH_FAILED });
         yield put({ type: NOTIFICATION_SHOW, payload: {
             message: 'Oops, something went wrong...',
-            type: 'danger',
+            type: 'error',
         } });
     }
 }
@@ -51,7 +51,7 @@ function* getProductsListSaga(action) {
         yield put({ type: PRODUCT_LIST_FETCH_FAILED });
         yield put({ type: NOTIFICATION_SHOW, payload: {
             message: 'Oops, something went wrong...',
-            type: 'danger',
+            type: 'error',
         } });
     }
 }
@@ -65,7 +65,7 @@ function* getProductSaga(action) {
         yield put({ type: PRODUCT_FETCH_FAILED });
         yield put({ type: NOTIFICATION_SHOW, payload: {
             message: 'Oops, something went wrong...',
-            type: 'danger',
+            type: 'error',
         } });
     }
 }
@@ -93,7 +93,9 @@ function* removeProductFromCartSaga(action) {
 }
 
 function* notificationSaga(action) {
-    console.log(action);
+    yield delay(1500);
+
+    yield put({ type: NOTIFICATION_HIDE });
 }
 
 
