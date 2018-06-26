@@ -7,6 +7,7 @@ import {
     PRODUCT_ADDED_TO_CART,
     PRODUCT_REMOVED_FROM_CART,
     LAST_VIEWED_PRODUCT_ADD,
+    NOTIFICATION_HIDE,
 } from '../constants';
 
 import type {
@@ -58,5 +59,12 @@ export const lastAddedProductAdd = (product: ProductType): Object => {
     return {
         type: LAST_VIEWED_PRODUCT_ADD,
         payload: product,
-    }
+    };
+};
+
+export const hideNotification = (id: number): Object => {
+    return {
+        type: NOTIFICATION_HIDE,
+        payload: id,
+    };
 };

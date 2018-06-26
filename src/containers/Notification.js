@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 
 import { getNotificationState } from '../selectors';
 
+import { hideNotification } from '../actions';
+
 class Notification extends React.PureComponent {
     render() {
         return (
             <div>
                 {this.props.notifications.map((notification, index) => {
-                    const { isShown, message, type } = notification;
+                    const { isShown, message, type, id } = notification;
 
                     return (
                         <div className={ isShown ? 
@@ -16,6 +18,10 @@ class Notification extends React.PureComponent {
                             : `notification notification--${type}` }
                             key={index}>
                             {message}
+                            <div className="notification__close"
+                                 onClick={ () => { this.props.hideNotification(id) } }>
+                                ✕
+                            </div> 
                         </div>    
                     );
                 })}
@@ -30,4 +36,12 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, null)(Notification);
+const mapDispatchToProps = dispatch => {
+    return {
+        hideNotification: (id) => {
+            dispatch(hideNotification(id))
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Notification);

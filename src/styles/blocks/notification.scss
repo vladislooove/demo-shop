@@ -16,6 +16,15 @@
     color: #fff;
     transition-property: bottom;
 
+    &__close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        padding: 20px;
+        cursor: pointer;
+        transform: translateY(-50%);
+    }
+
     @for $i from 1 through 100 {
         &:nth-child(#{$i}) {
             z-index:  $i * 5;

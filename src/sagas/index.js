@@ -30,6 +30,7 @@ function* rootSaga() {
     yield takeEvery(PRODUCT_ADDED_TO_CART, addProductToCartSaga);
     yield takeEvery(PRODUCT_REMOVED_FROM_CART, removeProductFromCartSaga);
     yield takeEvery(NOTIFICATION_ADD, notificationSaga);
+    yield takeEvery(NOTIFICATION_HIDE, hideNotificationSaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -104,9 +105,13 @@ function* notificationSaga(action) {
     yield put({ type: NOTIFICATION_SHOW, payload: action.payload.id })
     yield delay(1500);
     yield put({ type: NOTIFICATION_HIDE, payload: action.payload.id });
-    yield delay(1000);
+    yield delay(200);
     yield put({ type: NOTIFICATION_REMOVE, payload: action.payload.id });
 }
 
+function* hideNotificationSaga(action) {
+    yield delay(200);
+    yield put({ type: NOTIFICATION_REMOVE, payload: action.payload });
+}
 
 export default rootSaga;
