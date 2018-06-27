@@ -1,0 +1,49 @@
+@import '../utils/helpers.scss';
+@import '../utils/variables.scss'; 
+
+.checkout {
+    position: relative;
+    margin-bottom: 20px;
+    
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 28px;
+    }
+
+    &__form {
+        max-width: 50%;
+    }
+
+    &__form-title {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    &__form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    &__form-input-select{
+        display: block !important;
+    }
+
+    &__form-input {
+        @extend %transition;
+
+        width: 100%;
+        padding: 5px 0;
+        margin-bottom: 15px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $color-secondary;
+
+        &:focus {
+            border-color: $color-secondary-variant;
+            box-shadow: 0 1px 0 0 $color-secondary-variant;
+        }
+    }
+}

@@ -3,6 +3,7 @@
     "app.header.last_viewed": "Последние просмотренные товары",
     "app.header.products": "Товары",
     "app.header.cart": "Корзина",
+    "app.header.checkout": "Оформление",
 
     "app.navigation.home": "Главная",
     "app.navigation.products": "Товары",
@@ -21,6 +22,12 @@
     "cart.label.remove": "Удалить",
     "cart.label.summary": "Итого",
     "cart.label.last_added": "Вы добавили",
+
+    "checkout.form_label.info": "Информация",
+    "checkout.form_label.first_name": "Имя",
+    "checkout.form_label.last_name": "Фамилия",
+    "checkout.form_label.delivery_city": "Город",
+    "checkout.form_label.delivery_address": "Адрес",
 
     "btn.remove": "Удалить",
     "btn.buy": "Купить",

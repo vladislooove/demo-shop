@@ -3,6 +3,7 @@
     "app.header.last_viewed": "Останні переглянуті",
     "app.header.products": "Товари",
     "app.header.cart": "Кошик",
+    "app.header.checkout": "Оформлення",
 
     "app.navigation.home": "Головна",
     "app.navigation.products": "Товари",
@@ -21,6 +22,12 @@
     "cart.label.remove": "Видалити",
     "cart.label.summary": "Загалом",
     "cart.label.last_added": "Ви додали",
+
+    "checkout.form_label.info": "Інформація",
+    "checkout.form_label.first_name": "Ім'я",
+    "checkout.form_label.last_name": "Прізвище",
+    "checkout.form_label.delivery_city": "Місто",
+    "checkout.form_label.delivery_address": "Адреса",
 
     "btn.remove": "Видалити",
     "btn.buy": "Купити",

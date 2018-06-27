@@ -3,6 +3,7 @@
     "app.header.last_viewed": "Last viewed products",
     "app.header.products": "Products",
     "app.header.cart": "Cart",
+    "app.header.checkout": "Checkout",
 
     "app.navigation.home": "Home",
     "app.navigation.products": "Products",
@@ -21,6 +22,12 @@
     "cart.label.remove": "Remove",
     "cart.label.summary": "Summary",
     "cart.label.last_added": "You added",
+
+    "checkout.form_label.info": "Personal info",
+    "checkout.form_label.first_name": "First name",
+    "checkout.form_label.last_name": "Last name",
+    "checkout.form_label.delivery_city": "City",
+    "checkout.form_label.delivery_address": "Address",
 
     "btn.remove": "Remove",
     "btn.buy": "Buy",

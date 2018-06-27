@@ -25,7 +25,7 @@ class Cart extends React.PureComponent {
         return (
             <section className="cart">
                 <div className="cart__title">
-                    <FormattedMessage id="cart.label.cart" />
+                    <FormattedMessage id="app.header.cart" />
                 </div>
                 {this.props.products.length > 0 && 
                     <div className="cart__headers">
