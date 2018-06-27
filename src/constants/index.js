@@ -27,4 +27,6 @@ export const LAST_VIEWED_PRODUCT_ADD = 'LAST_VIEWED_PRODUCT_ADD';
 
 export const LOCALE_CHANGE:string = 'LOCALE_CHANGE';
 
-export const GET_CITY: string = 'GET_SITY';
+export const REQUEST_AVAILABLE_CITIES: string = 'REQUEST_AVAILABLE_CITIES';
+export const CITIES_FETCHED_SUCCESSFULLY: string = 'CITIES_FETCHED_SUCCESSFULLY';
+export const GET_CITY: string = 'GET_CITY';

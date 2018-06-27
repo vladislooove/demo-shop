@@ -32,6 +32,12 @@ class Checkout extends React.PureComponent {
         this.props.getCity(event.target.value);
     }
 
+    optionHandler(item, data, event) {
+        this.setState({
+            deliveryCityValue: item,
+        });
+    }
+
     render() {
         const { availableCities, deliveryCity, deliveryAddress, userFirstName, userLastName } = this.props.checkout;
         return (
@@ -69,6 +75,7 @@ class Checkout extends React.PureComponent {
                         onChange={this.inputSelecthandler.bind(this)}
                         containerClass="checkout__form-input-select"
                         inputClass="checkout__form-input"
+                        onOptionClick={this.optionHandler.bind(this)}
                     />
 
                     <label className="checkout__form-label">

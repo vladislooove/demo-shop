@@ -9,7 +9,7 @@ import {
     LAST_VIEWED_PRODUCT_ADD,
     NOTIFICATION_HIDE,
     LOCALE_CHANGE,
-    GET_CITY,
+    REQUEST_AVAILABLE_CITIES,
 } from '../constants';
 
 import type {
@@ -80,7 +80,7 @@ export const localeChange = (locale: string): Object => {
 
 export const getCity = (query: string): Object => {
     return {
-        type: GET_CITY,
+        type: REQUEST_AVAILABLE_CITIES,
         payload: query,
     };
 };

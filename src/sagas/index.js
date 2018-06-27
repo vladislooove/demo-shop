@@ -21,6 +21,8 @@ import {
     NOTIFICATION_SHOW,
     NOTIFICATION_HIDE,
     NOTIFICATION_REMOVE,
+    REQUEST_AVAILABLE_CITIES,
+    CITIES_FETCHED_SUCCESSFULLY,
 } from '../constants';
 
 function* rootSaga() {
@@ -31,6 +33,7 @@ function* rootSaga() {
     yield takeEvery(PRODUCT_REMOVED_FROM_CART, removeProductFromCartSaga);
     yield takeEvery(NOTIFICATION_ADD, notificationSaga);
     yield takeEvery(NOTIFICATION_HIDE, hideNotificationSaga);
+    yield takeEvery(REQUEST_AVAILABLE_CITIES, getCitySaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -112,6 +115,19 @@ function* notificationSaga(action) {
 function* hideNotificationSaga(action) {
     yield delay(200);
     yield put({ type: NOTIFICATION_REMOVE, payload: action.payload });
+}
+
+function* getCitySaga(action) {
+    try {
+        const response = yield call(Api.getDeliveryCity, action.payload);
+        yield put({ type: CITIES_FETCHED_SUCCESSFULLY, payload: response.data.data })
+    } catch (e) {
+        yield put({ type: NOTIFICATION_ADD, payload: {
+            message: 'msg.error',
+            type: 'error',
+            id: parseInt((Math.random() * 1000), 10),
+        } });
+    }
 }
 
 export default rootSaga;
