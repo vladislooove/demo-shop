@@ -38,14 +38,18 @@ class Checkout extends React.PureComponent {
         });
     }
 
+    onFormSubmit() {
+        console.log('WOOW')
+    }
+
     render() {
-        const { availableCities, deliveryCity, deliveryAddress, userFirstName, userLastName } = this.props.checkout;
+        const { availableCities } = this.props.checkout;
         return (
             <section className="checkout">
                 <div className="checkout__title">
                     <FormattedMessage id="app.header.checkout" />
                 </div>
-                <form className="checkout__form">
+                <form className="checkout__form" onSubmit={this.onFormSubmit.bind(this)}>
                     <div className="checkout__form-title">
                         <FormattedMessage id="checkout.form_label.info" />
                     </div>
@@ -55,7 +59,8 @@ class Checkout extends React.PureComponent {
                     <input className="checkout__form-input" 
                             type="text"
                             value={this.state.firstNameValue}
-                            onChange={(event) => {this.inputHandler(event, 'firstNameValue')}} />
+                            onChange={(event) => {this.inputHandler(event, 'firstNameValue')}}
+                            required />
 
                     <label className="checkout__form-label">
                         <FormattedMessage id="checkout.form_label.last_name" />
@@ -63,7 +68,8 @@ class Checkout extends React.PureComponent {
                     <input className="checkout__form-input" 
                             type="text"
                             value={this.state.lastNameValue}
-                            onChange={(event) => {this.inputHandler(event, 'lastNameValue')}} />
+                            onChange={(event) => {this.inputHandler(event, 'lastNameValue')}}
+                            required />
 
 
                     <label className="checkout__form-label">
@@ -76,6 +82,8 @@ class Checkout extends React.PureComponent {
                         containerClass="checkout__form-input-select"
                         inputClass="checkout__form-input"
                         onOptionClick={this.optionHandler.bind(this)}
+                        dropdownClass="checkout__form-dropdown"
+                        dropdownOptionClass="checkout__form-dropdown-option"
                     />
 
                     <label className="checkout__form-label">
@@ -84,7 +92,11 @@ class Checkout extends React.PureComponent {
                     <input className="checkout__form-input" 
                             type="text"
                             value={this.state.deliveryAddressValue}
-                            onChange={(event) => {this.inputHandler(event, 'deliveryAddressValue')}} />                    
+                            onChange={(event) => {this.inputHandler(event, 'deliveryAddressValue')}}
+                            required />
+                    <button className="checkout__submit-btn" onClick={this.onFormSubmit.bind(this)}>
+                        <FormattedMessage id="btn.submit" />
+                    </button>               
                 </form>
             </section>
         );
