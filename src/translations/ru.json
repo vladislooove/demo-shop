@@ -8,6 +8,7 @@
     "app.navigation.products": "Товары",
     "app.navigation.product": "Товар",
     "app.navigation.cart": "Корзина",
+    "app.navigation.checkout": "Оформление",
 
     "app.product.top_selling_label": "Топ",
     "app.product.expires_label": "Исчезнет",
@@ -24,6 +25,7 @@
     "btn.remove": "Удалить",
     "btn.buy": "Купить",
     "btn.load_more": "Смотреть еще",
+    "btn.checkout": "Перейти к оформлению",
 
     "msg.no_items": "Пока что ничего нет...",
     "msg.error": "Ой, что-то пошло не так...",

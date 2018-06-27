@@ -8,6 +8,7 @@
     "app.navigation.products": "Products",
     "app.navigation.product": "Product",
     "app.navigation.cart": "Cart",
+    "app.navigation.checkout": "Checkout",
 
     "app.product.top_selling_label": "Top",
     "app.product.expires_label": "Expires",
@@ -24,6 +25,7 @@
     "btn.remove": "Remove",
     "btn.buy": "Buy",
     "btn.load_more": "Load more",
+    "btn.checkout": "Go to checkout",
 
     "msg.no_items": "There are no items yet...",
     "msg.error": "Oops, something went wrong...",

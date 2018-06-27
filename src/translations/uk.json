@@ -8,6 +8,7 @@
     "app.navigation.products": "Товари",
     "app.navigation.product": "Товар",
     "app.navigation.cart": "Кошик",
+    "app.navigation.checkout": "Оформлення",
 
     "app.product.top_selling_label": "Топ",
     "app.product.expires_label": "Зникне",
@@ -24,6 +25,7 @@
     "btn.remove": "Видалити",
     "btn.buy": "Купити",
     "btn.load_more": "Дивитися більше",
+    "btn.checkout": "Перейти до оформлення",
 
     "msg.no_items": "Поки що нічого немає...",
     "msg.error": "Схоже, щось пішло не так...",

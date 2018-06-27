@@ -34,6 +34,8 @@
 
 %button-primary {
     @extend %transition;
+    @extend %non-decorated;
+    
     display: inline-block;
     background: none;
     border: 0;

@@ -7,6 +7,7 @@ import Home from '../screens/Home';
 import Products from '../screens/Products';
 import Product from '../screens/Product';
 import Cart from '../screens/Cart';
+import Checkout from '../screens/Checkout';
 
 import { getCartState } from '../selectors';
 
@@ -21,7 +22,7 @@ class Router extends React.PureComponent {
                     <Route exact path="/cart" component={Cart} />
                     <Route path ="/cart/checkout" render={() => (
                         this.props.cartProducts.length ? (
-                            <Cart />
+                            <Checkout />
                         ) : (
                             <Redirect to="/products" />
                         )

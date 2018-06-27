@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 import { cartProductRemove } from '../actions';
 import { getCartState } from '../selectors';
@@ -61,11 +62,17 @@ class Cart extends React.PureComponent {
                 </div>
                 {this.props.products.length > 0 &&
                     <div className="cart__footer">
-                        <span className="cart__footer-label">
-                            <FormattedMessage id="cart.label.summary" />
-                        </span>
-                        <Price price={this.getSummaryPrice()} />
+                        <div className="cart__summary">
+                            <span className="cart__summary-label">
+                                <FormattedMessage id="cart.label.summary" />
+                            </span>
+                            <Price price={this.getSummaryPrice()} />
+                        </div>
+                        <Link className="cart__footer-link" to="/cart/checkout">
+                            <FormattedMessage id="btn.checkout" />
+                        </Link>
                     </div>
+                    
                 }
             </section>
         );

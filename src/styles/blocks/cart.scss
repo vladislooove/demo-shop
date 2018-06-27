@@ -1,4 +1,5 @@
 @import '../utils/variables.scss';
+@import '../utils/helpers.scss';
 
 .cart {
     &__title {
@@ -50,16 +51,25 @@
 
     &__footer {
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-end;
     }
 
-    &__footer-label {
+    &__summary {
+        margin-bottom: 15px;
+    }
+
+    &__summary-label {
         margin-right: 15px;
         color: $color-secondary-variant;
 
         &::after {
             content: ':';
         }
+    }
+
+    &__footer-link {
+        @extend %button-primary;
     }
 }
