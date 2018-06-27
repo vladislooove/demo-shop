@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Breadcrumbs from '../components/Breadcrumbs';
 
+import Checkout from '../containers/Checkout';
+
 const CheckoutScreen = () => {
     const checkoutBreadcrumbsLinks = [{
         name: 'app.navigation.cart',
@@ -16,7 +18,7 @@ const CheckoutScreen = () => {
             <Breadcrumbs
                 links={checkoutBreadcrumbsLinks}
             />
-            <p>Look ya</p>
+            <Checkout />
         </Layout>
     );
 }

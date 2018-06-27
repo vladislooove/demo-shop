@@ -57,3 +57,27 @@ export type LocaleType = {
     isActive: boolean,
     name: string,
 };
+
+export type AddressType = {
+    Area: string,
+    DeliveryCity: string,
+    MainDescription: string,
+    ParentRegionCode: string,
+    ParentRegionTypes: string,
+    Present: string,
+    Ref: string,
+    Region: string,
+    RegionTypes: string,
+    RegionTypesCode: string,
+    SettlementTypeCode: string,
+    StreetsAvailability: string,
+    Warehouses: string,
+};
+
+export type CheckoutStateType = {
+    availableCities: Array<AddresType>,
+    deliveryCity: AddressType | null,
+    deliveryAddress: string | null,
+    userFirstName: string | null,
+    userLastName: string | null,
+};
