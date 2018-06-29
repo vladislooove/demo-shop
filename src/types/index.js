@@ -75,7 +75,7 @@ export type AddressType = {
 };
 
 export type CheckoutStateType = {
-    availableCities: Array<AddresType>,
+    availableCities: Array<AddressType>,
     deliveryCity: AddressType | null,
     deliveryAddress: string | null,
     userFirstName: string | null,

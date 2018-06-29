@@ -126,7 +126,10 @@ const mapDispatchToProps = dispatch => {
 Checkout.proptypes = {
     checkout: PropTypes.object.isRequired,
     getCity: PropTypes.func.isRequired,
-    submitCheckout
+    submitCheckout: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout));

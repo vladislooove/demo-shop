@@ -8,6 +8,7 @@
 flow-typed
 
 [lints]
+deprecated-call-syntax=off
 
 [options]
 esproposal.decorators=ignore
