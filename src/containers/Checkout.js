@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactInputSelect from 'react-input-select';
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router-dom';
 
-import { getCity } from '../actions';
+import { getCity, submitCheckout } from '../actions';
 
 import { getCheckoutState } from '../selectors';
 
@@ -38,8 +39,10 @@ class Checkout extends React.PureComponent {
         });
     }
 
-    onFormSubmit() {
-        console.log('WOOW')
+    onFormSubmit(event) {
+        event.preventDefault();
+        this.props.submitCheckout(this.state);
+        this.props.history.push('/');
     }
 
     render() {
@@ -113,13 +116,17 @@ const mapDispatchToProps = dispatch => {
     return {
         getCity: (query) => {
             dispatch(getCity(query))
-        }
+        },
+        submitCheckout: (userData) => {
+            dispatch(submitCheckout(userData))
+        },
     };
 };
 
 Checkout.proptypes = {
     checkout: PropTypes.object.isRequired,
     getCity: PropTypes.func.isRequired,
+    submitCheckout
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout));

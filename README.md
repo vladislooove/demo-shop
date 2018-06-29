@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+to compile scss into css run:
+
+### `npm run watch-css`
+
+after scss compiled, you may set up project by:
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

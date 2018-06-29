@@ -64,4 +64,8 @@
             background-color: #eee
         }
     }
+
+    &__submit-btn {
+        @extend %button-primary;
+    }
 }

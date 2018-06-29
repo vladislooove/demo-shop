@@ -15,6 +15,8 @@ export const PRODUCT_FETCH_FAILED: string = 'PRODUCT_FETCH_FAILED';
 export const PRODUCT_ADDED_TO_CART: string = 'PRODUCT_ADDED_TO_CART';
 export const PRODUCT_REMOVED_FROM_CART: string = 'PRODUCT_REMOVED_FROM_CART';
 
+export const CART_CLEAR: string = 'CART_CLEAR';
+
 export const CART_POPUP_SHOW: string = 'CART_POPUP_SHOW';
 export const CART_POPUP_HIDE: string = 'CART_POPUP_HIDE';
 
@@ -30,3 +32,4 @@ export const LOCALE_CHANGE:string = 'LOCALE_CHANGE';
 export const REQUEST_AVAILABLE_CITIES: string = 'REQUEST_AVAILABLE_CITIES';
 export const CITIES_FETCHED_SUCCESSFULLY: string = 'CITIES_FETCHED_SUCCESSFULLY';
 export const GET_CITY: string = 'GET_CITY';
+export const SUBMIT_CHECKOUT: string = 'SUBMIT_CHECKOUT';

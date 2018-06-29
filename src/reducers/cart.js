@@ -3,6 +3,7 @@
 import {
     PRODUCT_ADDED_TO_CART,
     PRODUCT_REMOVED_FROM_CART,
+    CART_CLEAR,
 } from '../constants';
 
 import type {
@@ -32,6 +33,12 @@ const cart = (state: CartStateType = { isLoading: false, list: []}, action: Obje
             return {
                 isLoading: false,
                 list: newList,
+            };
+
+        case CART_CLEAR:
+            return {
+                isLoading: false,
+                list: []
             };
 
         default:

@@ -10,6 +10,7 @@ import {
     NOTIFICATION_HIDE,
     LOCALE_CHANGE,
     REQUEST_AVAILABLE_CITIES,
+    SUBMIT_CHECKOUT,
 } from '../constants';
 
 import type {
@@ -84,3 +85,10 @@ export const getCity = (query: string): Object => {
         payload: query,
     };
 };
+
+export const submitCheckout = (userData: Object): Object => {
+    return {
+        type: SUBMIT_CHECKOUT,
+        payload: userData,
+    }
+}

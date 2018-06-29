@@ -1,6 +1,7 @@
 // @flow
 import { 
-    CITIES_FETCHED_SUCCESSFULLY
+    CITIES_FETCHED_SUCCESSFULLY,
+    SUBMIT_CHECKOUT,
 } from '../constants';
 
 import type { CheckoutStateType } from '../types';
@@ -29,6 +30,18 @@ const checkout = (state: CheckoutStateType = {
                 userFirstName: state.userFirstName,
                 userLastName: state.userLastName,            
             };
+
+        case SUBMIT_CHECKOUT:
+            const { deliveryCity, deliveryAddress, userFirstName, userLastName } = action.payload;
+
+            return {
+                availableCities: state.availableCities,
+                deliveryCity,
+                deliveryAddress,
+                userFirstName,
+                userLastName,
+            };
+
         default:
             return state;
     }

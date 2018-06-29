@@ -33,9 +33,11 @@
     "btn.buy": "Купить",
     "btn.load_more": "Смотреть еще",
     "btn.checkout": "Перейти к оформлению",
+    "btn.submit": "Подтвердить",
 
     "msg.no_items": "Пока что ничего нет...",
     "msg.error": "Ой, что-то пошло не так...",
     "msg.product_added_to_cart": "Товар добавлен в корзину",
-    "msg.product_removed_from_cart": "Товар удален из корзины"
+    "msg.product_removed_from_cart": "Товар удален из корзины",
+    "msg.checkout_processed": "Покупка успешно совершена"
 }

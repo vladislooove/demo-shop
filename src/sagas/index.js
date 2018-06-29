@@ -17,12 +17,14 @@ import {
     PRODUCT_REMOVED_FROM_CART,
     CART_POPUP_SHOW,
     CART_POPUP_HIDE,
+    CART_CLEAR,
     NOTIFICATION_ADD,
     NOTIFICATION_SHOW,
     NOTIFICATION_HIDE,
     NOTIFICATION_REMOVE,
     REQUEST_AVAILABLE_CITIES,
     CITIES_FETCHED_SUCCESSFULLY,
+    SUBMIT_CHECKOUT,
 } from '../constants';
 
 function* rootSaga() {
@@ -34,6 +36,7 @@ function* rootSaga() {
     yield takeEvery(NOTIFICATION_ADD, notificationSaga);
     yield takeEvery(NOTIFICATION_HIDE, hideNotificationSaga);
     yield takeEvery(REQUEST_AVAILABLE_CITIES, getCitySaga);
+    yield takeEvery(SUBMIT_CHECKOUT, submitCheckoutSaga);
 }
 
 function* getTopSellingProductsSaga(action) {
@@ -128,6 +131,16 @@ function* getCitySaga(action) {
             id: parseInt((Math.random() * 1000), 10),
         } });
     }
+}
+
+function* submitCheckoutSaga(action) {
+    yield put({ type: CART_CLEAR });
+
+    yield put({ type: NOTIFICATION_ADD, payload: {
+        message: 'msg.checkout_processed',
+        type: 'success',
+        id: parseInt((Math.random() * 1000), 10),
+    } });
 }
 
 export default rootSaga;

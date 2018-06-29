@@ -33,9 +33,11 @@
     "btn.buy": "Купити",
     "btn.load_more": "Дивитися більше",
     "btn.checkout": "Перейти до оформлення",
+    "btn.submit": "Підтвердити",
 
     "msg.no_items": "Поки що нічого немає...",
     "msg.error": "Схоже, щось пішло не так...",
     "msg.product_added_to_cart": "Товар додано до кошика",
-    "msg.product_removed_from_cart": "Товар видалено з кошика"
+    "msg.product_removed_from_cart": "Товар видалено з кошика",
+    "msg.checkout_processed": "Покупка здійснена успішно"
 }

@@ -33,9 +33,11 @@
     "btn.buy": "Buy",
     "btn.load_more": "Load more",
     "btn.checkout": "Go to checkout",
+    "btn.submit": "Submit",
 
     "msg.no_items": "There are no items yet...",
     "msg.error": "Oops, something went wrong...",
     "msg.product_added_to_cart": "Product added to cart",
-    "msg.product_removed_from_cart": "Product removed from cart"
+    "msg.product_removed_from_cart": "Product removed from cart",
+    "msg.checkout_processed": "Checkour processed"
 }
