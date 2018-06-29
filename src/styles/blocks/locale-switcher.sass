@@ -1,0 +1,21 @@
+@import '../utils/variables.sass'
+@import '../utils/helpers.sass'
+
+.locale-switcher 
+    @extend %list-unstyled
+
+    display: flex
+
+    &__link 
+        padding: 0 10px
+        font-size: 14px
+        font-weight: 700
+        text-transform: uppercase
+        color: #fff
+        cursor: pointer
+
+        &--active 
+            color: $color-secondary
+            text-decoration: underline
+        
+    

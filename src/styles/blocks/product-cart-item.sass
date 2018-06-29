@@ -1,0 +1,69 @@
+@import '../utils/variables.sass'
+@import '../utils/helpers.sass'
+
+.product-cart-item 
+    display: flex
+    align-items: center
+    margin-bottom: 5px
+
+    &__media 
+        @extend %non-decorated
+
+        display: block
+        flex-basis: 20%
+        max-width: 20%
+        flex-shrink: 0
+        height: 150px
+    
+
+    &__img 
+        width: 100%
+        height: 100%
+        object-fit: cover
+    
+
+    &__info 
+        flex-basis: 40%
+        max-width: 40%
+        flex-shrink: 0
+        padding: 0 10px
+    
+
+    &__title 
+        @extend %non-decorated
+
+        display: block
+        margin-bottom: 10px
+        color: $color-primary-variant
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 700
+    
+
+    &__description 
+        font-size: 14px
+    
+
+    &__price 
+        flex-basis: 16%
+        max-width: 16%
+        flex-shrink: 0
+        text-align: center
+    
+
+    &__date-added,
+    &__remove 
+        flex-basis: 12%
+        max-width: 12%
+        flex-shrink: 0
+        text-align: center
+    
+
+    &__date-added 
+        font-size: 12px
+        color: $color-error
+    
+
+    &__remove-btn 
+        @extend %button-primary
+    

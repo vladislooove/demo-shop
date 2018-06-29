@@ -1,0 +1,59 @@
+@import './variables.sass'
+
+%container 
+    width: 1200px
+    margin: 0 auto
+
+
+%list-unstyled 
+    list-style: none
+    margin: 0
+    padding: 0
+
+
+%non-decorated 
+    text-decoration: none
+
+    &:hover,
+    &:focus,
+    &:active 
+        text-decoration: none
+    
+
+
+%transition 
+    transition-timing-function: ease
+    transition-duration: $time-md
+
+
+%img-responsive 
+    display: block
+    max-width: 100%
+    height: auto
+
+
+%button-primary 
+    @extend %transition
+    @extend %non-decorated
+    
+    display: inline-block
+    background: none
+    border: 0
+    outline: 0
+    padding: 10px 20px
+    font-size: 14px
+    font-weight: 700
+    color: #fff
+    cursor: pointer
+    background-color: $color-primary
+    transition-property: background-color
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+
+    &:hover,
+    &:focus 
+        background-color: $color-primary-variant
+    
+
+    &:active 
+        background-color: $color-secondary-variant
+    

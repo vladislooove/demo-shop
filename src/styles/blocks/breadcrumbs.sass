@@ -1,0 +1,29 @@
+@import '../utils/variables.sass'
+@import '../utils/helpers.sass'
+
+.breadcrumbs 
+    @extend %list-unstyled
+
+    display: flex
+    margin-bottom: 30px !important
+
+    &__item 
+        font-size: 12px
+        text-transform: uppercase
+
+        &:not(:last-of-type) 
+            &::after 
+                padding: 0 5px
+                color: $color-secondary-variant
+                content: '/'
+            
+        
+    
+
+    &__link 
+        color: $color-secondary-variant
+
+        &--active 
+            color: $color-primary-variant
+        
+    

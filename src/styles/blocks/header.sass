@@ -1,0 +1,61 @@
+@import '../utils/variables.sass'
+@import '../utils/helpers.sass'
+
+.header 
+    background-color: $color-primary
+    padding: 20px 0
+
+    &__container 
+        @extend %container
+
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-left: 150px
+    
+
+    &__logo 
+        position: absolute
+        top: -10px
+        left: 0
+        width: 120px
+    
+
+    &__logo-img 
+        @extend %img-responsive
+    
+
+    &__nav 
+        @extend %list-unstyled
+
+        display: flex
+        flex-shrink: 0
+        flex-wrap: nowrap
+    
+    
+    &__nav-link 
+        @extend %transition, %non-decorated
+
+        display: block
+        padding: 15px
+        font-size: 22px
+        text-transform: uppercase
+        color: #fff
+        transition-property: color
+
+        &:hover,
+        &:focus,
+        &--active 
+            color: $color-secondary
+        
+    
+
+    &__cart 
+        margin-left: 50px
+    
+
+    &__group 
+        display: flex
+        align-items: center
+    
