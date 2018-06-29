@@ -7,7 +7,7 @@ import Checkout from '../containers/Checkout';
 const CheckoutScreen = () => {
     const checkoutBreadcrumbsLinks = [{
         name: 'app.navigation.cart',
-        path: '/cart,'
+        path: '/cart'
     }, {
         name: 'app.navigation.checkout',
         path: '/cart/checkout',
